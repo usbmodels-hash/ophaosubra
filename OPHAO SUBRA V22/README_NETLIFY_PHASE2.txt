@@ -67,3 +67,54 @@ Security notes
 - Honeypot anti-spam is included.
 - Basic in-memory rate limiting is included.
 - Required fields and privacy consent are validated server-side.
+
+========================================================================
+Actualización v23 — Fix mapeo RGPD en Contactos Operadores
+========================================================================
+
+En la revisión de Airtable de la Fase 2A se detectó que, dentro de la
+tabla Contactos Operadores, el campo operativo correcto para registrar
+el consentimiento como checkbox es:
+
+  - RGPD aceptado
+  - Fecha RGPD aceptado
+
+Por este motivo, la función:
+
+  netlify/functions/submit-access-request.js
+
+ha sido actualizada para escribir el consentimiento del contacto en esos
+campos.
+
+Mapeo correcto de consentimiento
+--------------------------------
+En Operadores Objetivo:
+  - Consentimiento privacidad
+  - Fecha consentimiento
+
+En Contactos Operadores:
+  - RGPD aceptado
+  - Fecha RGPD aceptado
+
+Motivo del cambio
+-----------------
+El campo Consentimiento privacidad en Contactos Operadores quedó como
+campo de texto, por lo que no debe usarse como checkbox operativo. Para
+evitar errores en la integración y mantener un registro claro del
+consentimiento, el formulario escribe ahora en RGPD aceptado.
+
+Archivo modificado
+------------------
+  netlify/functions/submit-access-request.js
+
+Test recomendado tras deploy
+-----------------------------
+Enviar una solicitud desde /ophao-subra/access y verificar en Airtable:
+
+En Operadores Objetivo:
+  - Consentimiento privacidad marcado
+  - Fecha consentimiento completada
+
+En Contactos Operadores:
+  - RGPD aceptado marcado
+  - Fecha RGPD aceptado completada
