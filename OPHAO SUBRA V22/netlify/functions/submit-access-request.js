@@ -5,6 +5,7 @@ const AIRTABLE_META_API = 'https://api.airtable.com/v0/meta';
 
 const BASE_ID = process.env.AIRTABLE_BASE_ID;
 const TOKEN = process.env.AIRTABLE_TOKEN;
+
 const OPERATORS_TABLE = process.env.AIRTABLE_OPERATORS_TABLE_ID || 'tblHrWysOvgHlOgd5';
 const CONTACTS_TABLE = process.env.AIRTABLE_CONTACTS_TABLE_ID || 'tbl6Bi3TK5wRlZkUa';
 const INTERACTIONS_TABLE = process.env.AIRTABLE_INTERACTIONS_TABLE_ID || 'Interacciones Portal';
@@ -171,7 +172,6 @@ async function findOperator(data) {
   const websiteHost = normalizeHost(data.companyWebsite);
   const email = normalizeEmail(data.email);
   const company = text(data.company, 300).toLowerCase();
-
   if (websiteHost) {
     const formula = `FIND('${escapeFormulaString(websiteHost)}', LOWER({Website} & '')) > 0`;
     const rec = await listOne(OPERATORS_TABLE, formula);
@@ -201,7 +201,6 @@ function pipelineFromRequest(data) {
   const requestDataRoom = bool(data.requestDataRoom);
   const requestNda = bool(data.requestNda);
   const requestMeeting = bool(data.requestMeeting);
-
   if (requestMeeting) {
     return {
       estado: 'Contactado',
@@ -259,7 +258,6 @@ function buildOperatorFields(data, schema, existingRecord, warnings) {
     comments ? `Comentarios: ${comments}` : ''
   ]);
   const appendedPortalComments = appendBlock(existing['Comentarios portal'], noteTitle, [comments || 'Solicitud recibida desde formulario de acceso.']);
-
   addField(fields, schema, OPERATORS_TABLE, 'Operador', text(data.company, 300), warnings);
   addField(fields, schema, OPERATORS_TABLE, 'Website', normalizeUrl(data.companyWebsite), warnings);
   addField(fields, schema, OPERATORS_TABLE, 'País', text(data.country, 120), warnings);
@@ -274,7 +272,6 @@ function buildOperatorFields(data, schema, existingRecord, warnings) {
   addField(fields, schema, OPERATORS_TABLE, 'Preparado automatizacion', pipeline.preparado, warnings);
   addField(fields, schema, OPERATORS_TABLE, 'Resultado llamada', pipeline.resultado, warnings);
   addField(fields, schema, OPERATORS_TABLE, 'Reunion solicitada', requestMeeting, warnings);
-
   addField(fields, schema, OPERATORS_TABLE, 'Modelo interes portal', text(data.interestModel, 160), warnings);
   addField(fields, schema, OPERATORS_TABLE, 'Nivel interes portal', text(data.interestLevel, 80), warnings);
   addField(fields, schema, OPERATORS_TABLE, 'Solicita Data Room', requestDataRoom, warnings);
@@ -290,7 +287,6 @@ function buildOperatorFields(data, schema, existingRecord, warnings) {
   addDateField(fields, schema, OPERATORS_TABLE, 'Fecha solicitud portal', warnings);
   addDateField(fields, schema, OPERATORS_TABLE, 'Fecha Interaccion', warnings);
   addDateField(fields, schema, OPERATORS_TABLE, 'Fecha consentimiento', warnings);
-
   return fields;
 }
 
@@ -299,7 +295,6 @@ function buildContactFields(data, operatorId, schema, existingRecord, warnings) 
   const existing = existingRecord?.fields || {};
   const comments = text(data.comments, 3000);
   const appendedNotes = appendBlock(existing['Notas'], `[Portal OPHAO SUBRA] ${new Date().toISOString()}`, [comments || 'Solicitud recibida desde formulario de acceso.']);
-
   addField(fields, schema, CONTACTS_TABLE, 'Nombre contacto', text(data.contactName, 200), warnings);
   addField(fields, schema, CONTACTS_TABLE, 'Cargo', text(data.role, 200), warnings);
   addField(fields, schema, CONTACTS_TABLE, 'Email', normalizeEmail(data.email), warnings);
@@ -310,8 +305,8 @@ function buildContactFields(data, operatorId, schema, existingRecord, warnings) 
   addField(fields, schema, CONTACTS_TABLE, 'Canal', 'Portal OPHAO SUBRA', warnings);
   addField(fields, schema, CONTACTS_TABLE, 'Estado contacto', 'Nuevo', warnings);
   addField(fields, schema, CONTACTS_TABLE, 'Origen portal', 'OPHAO SUBRA Landing', warnings);
-  addField(fields, schema, CONTACTS_TABLE, 'Consentimiento privacidad', bool(data.privacyConsent), warnings);
-  addDateField(fields, schema, CONTACTS_TABLE, 'Fecha consentimiento', warnings);
+  addField(fields, schema, CONTACTS_TABLE, 'RGPD aceptado', bool(data.privacyConsent), warnings);
+  addDateField(fields, schema, CONTACTS_TABLE, 'Fecha RGPD aceptado', warnings);
   return fields;
 }
 
@@ -341,7 +336,6 @@ async function createInteraction(data, operatorId, contactId, schema, warnings) 
   if (bool(data.requestNda)) requestTypes.push('NDA requested');
   if (bool(data.requestMeeting)) requestTypes.push('Meeting requested');
   if (!requestTypes.length) requestTypes.push('Access request');
-
   const fields = {};
   addField(fields, schema, INTERACTIONS_TABLE, 'Interaccion', `Access request · ${text(data.company, 120)} · ${new Date().toISOString()}`, warnings);
   addField(fields, schema, INTERACTIONS_TABLE, 'Operador', [operatorId], warnings);
@@ -354,7 +348,6 @@ async function createInteraction(data, operatorId, contactId, schema, warnings) 
   addField(fields, schema, INTERACTIONS_TABLE, 'UTM medium', text(data.utm_medium, 200), warnings);
   addField(fields, schema, INTERACTIONS_TABLE, 'UTM campaign', text(data.utm_campaign, 200), warnings);
   addField(fields, schema, INTERACTIONS_TABLE, 'Notas', text(data.comments, 3000), warnings);
-
   try {
     return await createOrUpdate(INTERACTIONS_TABLE, null, fields);
   } catch (err) {
