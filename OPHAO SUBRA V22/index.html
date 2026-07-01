@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OPHAO SUBRA | Ohperadores Hospitality</title>
+  <title>OPHAO SUBRA | Operadores Hospitality</title>
   <meta name="description" content="Activo hospitality built-to-suit en El Burgo, Málaga, diseñado para flexible living, workation, retreats y demanda adventure.">
   <style>
     :root {
@@ -15,7 +15,7 @@
       --bone: #F2EADF;
       --clay: #9A5B45;
       --copper: #A96F4C;
-      --fluor: #F3FF3B;
+      --fluor: #C9A15A;
       --fluor-deep: #3B82F6;
       --mauve: #8C7A7F;
       --olive: #596356;
@@ -1307,7 +1307,23 @@
       letter-spacing: .16em;
     }
 
-  </style>
+  
+    /* Full-bleed location hero map */
+    .territory-hero-map.location-study{position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;width:100vw;max-width:100vw;}
+    .territory-hero-map.location-study img{display:block;width:100%;height:auto;}
+    .territory-hero-map.location-study figcaption{max-width:1120px;margin:14px auto 0;padding:0 24px;}
+    @media (max-width:720px){.territory-hero-map.location-study figcaption{padding:0 18px;}}
+    /* Mid-page CTA band */
+    .midcta-band{background:linear-gradient(180deg,rgba(201,161,90,0.10),rgba(201,161,90,0.04));border-top:1px solid rgba(201,161,90,0.35);border-bottom:1px solid rgba(201,161,90,0.35);}
+    .midcta-band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px;}
+    .midcta-band .midcta-copy{flex:1 1 340px;}
+    .midcta-band .midcta-copy h3{margin:0 0 6px;font-family:Georgia,serif;font-size:1.5rem;color:#fff;}
+    .midcta-band .midcta-copy p{margin:0;color:rgba(255,255,255,0.72);}
+    .midcta-band .midcta-actions{display:flex;flex-wrap:wrap;gap:12px;}
+    .midcta-band .btn-primary{background:var(--fluor);color:#1a1206;font-weight:700;padding:14px 22px;border-radius:8px;text-decoration:none;}
+    .midcta-band .btn-secondary{border:1px solid rgba(201,161,90,0.6);color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;}
+    @media (max-width:720px){.midcta-band .midcta-actions{width:100%;}.midcta-band .btn-primary,.midcta-band .btn-secondary{flex:1 1 auto;text-align:center;}}
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -1418,7 +1434,7 @@
             <p>La propuesta permite construir un producto hospitality conectado con montaña, senderismo, mototurismo, retiros, trabajo remoto, comunidad internacional y escapadas hacia Ronda, manteniendo la autenticidad de un pueblo andaluz.</p>
           </div>
           <figure class="location-study territory-proof territory-hero-map">
-            <img src="assets/images/location-el-burgo-ronda.webp" alt="Mapa visual de OPHAO SUBRA integrado en El Burgo, Sierra de las Nieves y Ronda" loading="lazy">
+            <img src="assets/images/location-hero-es.webp" alt="Mapa de ubicacion de OPHAO SUBRA en El Burgo: 25 min al Caminito del Rey, 35 min a Ronda, 40 min a Marbella y 50 min a Malaga" loading="lazy">
             <figcaption>
               <div class="microdata">Territory positioning study</div>
               <p><strong>Un activo dentro del pueblo. Una plataforma dentro del territorio.</strong><br>El Burgo aporta autenticidad, Sierra de las Nieves aporta naturaleza protegida y Ronda aporta reconocimiento internacional.</p>
@@ -1433,6 +1449,18 @@
         </div>
       </section>
 
+      <section class="section midcta-band">
+        <div class="wrap">
+          <div class="midcta-copy">
+            <h3>Acceso reservado a operadores cualificados</h3>
+            <p>Solicita el Data Room o agenda una discovery call para revisar el proyecto en detalle.</p>
+          </div>
+          <div class="midcta-actions">
+            <a class="btn-primary" href="#es-contact">Solicitar acceso al Data Room</a>
+            <a class="btn-secondary" href="#es-contact">Agendar discovery call</a>
+          </div>
+        </div>
+      </section>
       <section id="es-market" class="section dark">
         <div class="wrap">
           <div class="kicker">04 · Evidencia de mercado</div>
@@ -1958,7 +1986,7 @@
             <p>The proposition supports a hospitality product connected to mountains, hiking, motorcycle tourism, retreats, remote work, international community and Ronda-oriented excursions, while preserving the authenticity of an Andalusian village.</p>
           </div>
           <figure class="location-study territory-proof territory-hero-map">
-            <img src="assets/images/location-el-burgo-ronda.webp" alt="Visual map of OPHAO SUBRA integrated into El Burgo, Sierra de las Nieves and Ronda" loading="lazy">
+            <img src="assets/images/location-hero-en.webp" alt="Location map of OPHAO SUBRA in El Burgo: 25 min to Caminito del Rey, 35 min to Ronda, 40 min to Marbella and 50 min to Malaga" loading="lazy">
             <figcaption>
               <div class="microdata">Territory positioning study</div>
               <p><strong>An asset inside the village. A platform inside the territory.</strong><br>El Burgo brings authenticity, Sierra de las Nieves brings protected nature and Ronda brings international recognition.</p>
@@ -1973,6 +2001,18 @@
         </div>
       </section>
 
+      <section class="section midcta-band">
+        <div class="wrap">
+          <div class="midcta-copy">
+            <h3>Reserved access for qualified operators</h3>
+            <p>Request the Data Room or book a discovery call to review the project in detail.</p>
+          </div>
+          <div class="midcta-actions">
+            <a class="btn-primary" href="#en-contact">Request Data Room access</a>
+            <a class="btn-secondary" href="#en-contact">Book a discovery call</a>
+          </div>
+        </div>
+      </section>
       <section id="en-market" class="section dark">
         <div class="wrap">
           <div class="kicker">04 · Market evidence</div>
