@@ -1455,6 +1455,89 @@
     @media (max-width: 720px) {
       .system-grid.sys-modules { grid-template-columns: 1fr; }
     }
+
+    /* v27 :: section 10 slider visual graphic panel */
+    .process-slides { position: relative; }
+    .process-visual .pv-graphic {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 40px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(201,161,90,.16), transparent 60%),
+        linear-gradient(160deg, rgba(36,54,47,.55), rgba(23,22,21,.9));
+    }
+    .process-visual .pv-mono {
+      font-family: var(--serif, Georgia, serif);
+      font-size: 40px;
+      letter-spacing: .12em;
+      color: var(--fluor);
+      opacity: .9;
+      margin-bottom: 30px;
+      text-shadow: 0 0 22px rgba(201,161,90,.4);
+    }
+    .process-visual .pv-track {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      align-items: flex-start;
+    }
+    .process-visual .pv-node {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 46px;
+      padding-left: 44px;
+      color: rgba(242,234,223,.78);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .1em;
+    }
+    .process-visual .pv-node::before {
+      content: attr(data-n);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,161,90,.55);
+      background: rgba(232,222,208,.05);
+      color: var(--fluor);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 900;
+      z-index: 2;
+    }
+    .process-visual .pv-node:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      width: 1px;
+      height: 46px;
+      background: linear-gradient(rgba(201,161,90,.5), rgba(201,161,90,.14));
+      z-index: 1;
+    }
+    .process-visual .pv-caption {
+      margin-top: 34px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: rgba(242,234,223,.5);
+      font-weight: 800;
+    }
+    @media (max-width: 980px) {
+      .process-visual { min-height: 340px; }
+      .process-visual .pv-node { height: 38px; }
+      .process-visual .pv-node:not(:last-child)::after { height: 38px; }
+    }
 </style>
 </head>
 <body>
@@ -1847,7 +1930,7 @@
           <div class="kicker">10 &#183; Proceso para operadores</div>
           <h2>Proceso para operadores</h2>
           <p class="lead">Un proceso claro para cualificar el encaje, proteger la informaci&#243;n sensible y avanzar hacia una estructura comercial viable.</p>
-          <ol class="process-timeline"><li class="process-tl-step"><span class="process-tl-node">01</span><div class="process-tl-body"><strong class="process-tl-title">Solicitud de acceso</strong><span class="process-tl-desc">Registras inter&#233;s y perfil de operador.</span></div></li><li class="process-tl-step"><span class="process-tl-node">02</span><div class="process-tl-body"><strong class="process-tl-title">Discovery call</strong><span class="process-tl-desc">Alineamos encaje, visi&#243;n y expectativas.</span></div></li><li class="process-tl-step"><span class="process-tl-node">03</span><div class="process-tl-body"><strong class="process-tl-title">Revisi&#243;n de oportunidad</strong><span class="process-tl-desc">Evaluamos activo, ubicaci&#243;n y potencial.</span></div></li><li class="process-tl-step"><span class="process-tl-node">04</span><div class="process-tl-body"><strong class="process-tl-title">NDA y Data Room</strong><span class="process-tl-desc">Firmamos NDA y abrimos documentaci&#243;n sensible.</span></div></li><li class="process-tl-step"><span class="process-tl-node">05</span><div class="process-tl-body"><strong class="process-tl-title">Workshop built-to-suit</strong><span class="process-tl-desc">Co-dise&#241;amos el producto a tu operaci&#243;n.</span></div></li><li class="process-tl-step"><span class="process-tl-node">06</span><div class="process-tl-body"><strong class="process-tl-title">Propuesta comercial</strong><span class="process-tl-desc">Definimos estructura, t&#233;rminos y econom&#237;a.</span></div></li><li class="process-tl-step"><span class="process-tl-node">07</span><div class="process-tl-body"><strong class="process-tl-title">LOI / MOU</strong><span class="process-tl-desc">Formalizamos la intenci&#243;n de colaboraci&#243;n.</span></div></li></ol>
+          <div class="process-slider" data-slider><div class="process-visual"><div class="pv-graphic"><div class="pv-mono">OS</div><div class="pv-track"><span class="pv-node" data-n="01"></span><span class="pv-node" data-n="02"></span><span class="pv-node" data-n="03"></span><span class="pv-node" data-n="04"></span><span class="pv-node" data-n="05"></span><span class="pv-node" data-n="06"></span><span class="pv-node" data-n="07"></span></div><div class="pv-caption">Ruta de acceso del operador</div></div></div><div class="process-content"><div class="process-progress"><button class="process-dot" type="button" aria-label="Paso 01"><span></span></button><button class="process-dot" type="button" aria-label="Paso 02"><span></span></button><button class="process-dot" type="button" aria-label="Paso 03"><span></span></button><button class="process-dot" type="button" aria-label="Paso 04"><span></span></button><button class="process-dot" type="button" aria-label="Paso 05"><span></span></button><button class="process-dot" type="button" aria-label="Paso 06"><span></span></button><button class="process-dot" type="button" aria-label="Paso 07"><span></span></button></div><div class="process-slides"><article class="process-slide"><div class="eyebrow">Paso 01 / 07</div><h3>Solicitud de acceso</h3><p>Registras inter&#233;s y perfil de operador.</p><div class="process-meta">Punto de entrada</div></article><article class="process-slide"><div class="eyebrow">Paso 02 / 07</div><h3>Discovery call</h3><p>Alineamos encaje, visi&#243;n y expectativas.</p><div class="process-meta">Alineamiento</div></article><article class="process-slide"><div class="eyebrow">Paso 03 / 07</div><h3>Revisi&#243;n de oportunidad</h3><p>Evaluamos activo, ubicaci&#243;n y potencial.</p><div class="process-meta">Evaluaci&#243;n</div></article><article class="process-slide"><div class="eyebrow">Paso 04 / 07</div><h3>NDA y Data Room</h3><p>Firmamos NDA y abrimos documentaci&#243;n sensible.</p><div class="process-meta">Confidencialidad</div></article><article class="process-slide"><div class="eyebrow">Paso 05 / 07</div><h3>Workshop built-to-suit</h3><p>Co-dise&#241;amos el producto a tu operaci&#243;n.</p><div class="process-meta">Co-dise&#241;o</div></article><article class="process-slide"><div class="eyebrow">Paso 06 / 07</div><h3>Propuesta comercial</h3><p>Definimos estructura, t&#233;rminos y econom&#237;a.</p><div class="process-meta">Estructura</div></article><article class="process-slide"><div class="eyebrow">Paso 07 / 07</div><h3>LOI / MOU</h3><p>Formalizamos la intenci&#243;n de colaboraci&#243;n.</p><div class="process-meta">Compromiso</div></article></div><div class="process-controls"><button class="process-btn" type="button" data-prev aria-label="Anterior">&#8592;</button><button class="process-btn" type="button" data-next aria-label="Siguiente">&#8594;</button><span class="process-count" data-count>01 / 07</span></div></div></div>
           <div class="mid-cta">
             <p>Solicita acceso para revisar documentaci&#243;n base, ubicaci&#243;n, activo y posibles estructuras de colaboraci&#243;n.</p>
             <div class="button-row"><a class="button primary" href="/ophao-subra/access">Solicitar acceso al Data Room</a><a class="button secondary" href="/ophao-subra/book-call">Agendar discovery call</a></div>
@@ -2339,7 +2422,7 @@
           <div class="kicker">10 &#183; Operator process</div>
           <h2>Operator Process</h2>
           <p class="lead">A clear process to qualify fit, protect sensitive information and move towards a viable commercial structure.</p>
-          <ol class="process-timeline"><li class="process-tl-step"><span class="process-tl-node">01</span><div class="process-tl-body"><strong class="process-tl-title">Access request</strong><span class="process-tl-desc">You register interest and operator profile.</span></div></li><li class="process-tl-step"><span class="process-tl-node">02</span><div class="process-tl-body"><strong class="process-tl-title">Discovery call</strong><span class="process-tl-desc">We align fit, vision and expectations.</span></div></li><li class="process-tl-step"><span class="process-tl-node">03</span><div class="process-tl-body"><strong class="process-tl-title">Opportunity review</strong><span class="process-tl-desc">We assess asset, location and potential.</span></div></li><li class="process-tl-step"><span class="process-tl-node">04</span><div class="process-tl-body"><strong class="process-tl-title">NDA & Data Room</strong><span class="process-tl-desc">We sign NDA and open sensitive documentation.</span></div></li><li class="process-tl-step"><span class="process-tl-node">05</span><div class="process-tl-body"><strong class="process-tl-title">Workshop built-to-suit</strong><span class="process-tl-desc">We co-design the product to your operation.</span></div></li><li class="process-tl-step"><span class="process-tl-node">06</span><div class="process-tl-body"><strong class="process-tl-title">Commercial proposal</strong><span class="process-tl-desc">We define structure, terms and economics.</span></div></li><li class="process-tl-step"><span class="process-tl-node">07</span><div class="process-tl-body"><strong class="process-tl-title">LOI / MOU</strong><span class="process-tl-desc">We formalize the intent to collaborate.</span></div></li></ol>
+          <div class="process-slider" data-slider><div class="process-visual"><div class="pv-graphic"><div class="pv-mono">OS</div><div class="pv-track"><span class="pv-node" data-n="01"></span><span class="pv-node" data-n="02"></span><span class="pv-node" data-n="03"></span><span class="pv-node" data-n="04"></span><span class="pv-node" data-n="05"></span><span class="pv-node" data-n="06"></span><span class="pv-node" data-n="07"></span></div><div class="pv-caption">Operator access route</div></div></div><div class="process-content"><div class="process-progress"><button class="process-dot" type="button" aria-label="Step 01"><span></span></button><button class="process-dot" type="button" aria-label="Step 02"><span></span></button><button class="process-dot" type="button" aria-label="Step 03"><span></span></button><button class="process-dot" type="button" aria-label="Step 04"><span></span></button><button class="process-dot" type="button" aria-label="Step 05"><span></span></button><button class="process-dot" type="button" aria-label="Step 06"><span></span></button><button class="process-dot" type="button" aria-label="Step 07"><span></span></button></div><div class="process-slides"><article class="process-slide"><div class="eyebrow">Step 01 / 07</div><h3>Access request</h3><p>You register interest and operator profile.</p><div class="process-meta">Entry point</div></article><article class="process-slide"><div class="eyebrow">Step 02 / 07</div><h3>Discovery call</h3><p>We align fit, vision and expectations.</p><div class="process-meta">Alignment</div></article><article class="process-slide"><div class="eyebrow">Step 03 / 07</div><h3>Opportunity review</h3><p>We assess asset, location and potential.</p><div class="process-meta">Assessment</div></article><article class="process-slide"><div class="eyebrow">Step 04 / 07</div><h3>NDA & Data Room</h3><p>We sign NDA and open sensitive documentation.</p><div class="process-meta">Confidentiality</div></article><article class="process-slide"><div class="eyebrow">Step 05 / 07</div><h3>Workshop built-to-suit</h3><p>We co-design the product to your operation.</p><div class="process-meta">Co-design</div></article><article class="process-slide"><div class="eyebrow">Step 06 / 07</div><h3>Commercial proposal</h3><p>We define structure, terms and economics.</p><div class="process-meta">Structure</div></article><article class="process-slide"><div class="eyebrow">Step 07 / 07</div><h3>LOI / MOU</h3><p>We formalize the intent to collaborate.</p><div class="process-meta">Commitment</div></article></div><div class="process-controls"><button class="process-btn" type="button" data-prev aria-label="Previous">&#8592;</button><button class="process-btn" type="button" data-next aria-label="Next">&#8594;</button><span class="process-count" data-count>01 / 07</span></div></div></div>
           <div class="mid-cta">
             <p>Request access to review base documentation, location, asset context and potential collaboration structures.</p>
             <div class="button-row"><a class="button primary" href="/ophao-subra/access">Request Data Room Access</a><a class="button secondary" href="/ophao-subra/book-call">Book a Discovery Call</a></div>
