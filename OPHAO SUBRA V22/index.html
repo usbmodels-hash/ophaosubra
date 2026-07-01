@@ -1538,6 +1538,48 @@
       .process-visual .pv-node { height: 38px; }
       .process-visual .pv-node:not(:last-child)::after { height: 38px; }
     }
+
+    /* v28 :: section 02 operator slider (Option A - right column) */
+    .op-slider {
+      margin-top: 0;
+      min-height: 360px;
+      align-self: stretch;
+    }
+    .op-content { padding: 40px; }
+    .op-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .op-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,161,90,.55);
+      background: rgba(232,222,208,.05);
+      color: var(--fluor);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-shadow: 0 0 12px rgba(201,161,90,.3);
+    }
+    .op-slide h3 {
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: 1.02;
+      margin-bottom: 16px;
+    }
+    .op-slide p {
+      font-size: 18px;
+      color: rgba(242,234,223,.76);
+      max-width: 520px;
+    }
+    @media (max-width: 980px) {
+      .op-slider { min-height: 320px; }
+      .op-content { padding: 30px; }
+    }
 </style>
 </head>
 <body>
@@ -1633,7 +1675,7 @@
               <a class="button secondary" href="/ophao-subra/book-call">Agendar discovery call</a>
             </div>
           </div>
-          <div class="operator-list"><div class="operator-card"><span class="operator-glyph">BH</span><div class="operator-card-body"><strong class="operator-name">Hoteleros boutique</strong><span class="operator-desc">Marcas con criterio de dise&#241;o y servicio de autor.</span></div></div><div class="operator-card"><span class="operator-glyph">AF</span><div class="operator-card-body"><strong class="operator-name">Alojamientos flexibles</strong><span class="operator-desc">Estancias h&#237;bridas: corta, media y larga duraci&#243;n.</span></div></div><div class="operator-card"><span class="operator-glyph">RW</span><div class="operator-card-body"><strong class="operator-name">Retreats & workation</strong><span class="operator-desc">Programaci&#243;n por cohortes y estancias con prop&#243;sito.</span></div></div><div class="operator-card"><span class="operator-glyph">RP</span><div class="operator-card-body"><strong class="operator-name">Hospitality rural premium</strong><span class="operator-desc">Autenticidad andaluza con est&#225;ndar internacional.</span></div></div><div class="operator-card"><span class="operator-glyph">GO</span><div class="operator-card-body"><strong class="operator-name">Gestores con capacidad operativa</strong><span class="operator-desc">Inmobiliario con m&#250;sculo de operaci&#243;n real.</span></div></div><div class="operator-card"><span class="operator-glyph">CP</span><div class="operator-card-body"><strong class="operator-name">Comunidad propia</strong><span class="operator-desc">Audiencia fiel que llena calendario y ocupaci&#243;n.</span></div></div><div class="operator-card"><span class="operator-glyph">JV</span><div class="operator-card-body"><strong class="operator-name">Plataformas & JV</strong><span class="operator-desc">Arrendamiento, gesti&#243;n, revenue share o joint venture.</span></div></div></div>
+          <div class="process-slider op-slider" data-slider><div class="process-content op-content"><div class="process-progress"><button class="process-dot" type="button" aria-label="Operador 01"><span></span></button><button class="process-dot" type="button" aria-label="Operador 02"><span></span></button><button class="process-dot" type="button" aria-label="Operador 03"><span></span></button><button class="process-dot" type="button" aria-label="Operador 04"><span></span></button><button class="process-dot" type="button" aria-label="Operador 05"><span></span></button><button class="process-dot" type="button" aria-label="Operador 06"><span></span></button><button class="process-dot" type="button" aria-label="Operador 07"><span></span></button></div><div class="process-slides"><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">BH</span>Operador 01 / 07</div><h3>Hoteleros boutique</h3><p>Marcas con criterio de dise&#241;o y servicio de autor.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">AF</span>Operador 02 / 07</div><h3>Alojamientos flexibles</h3><p>Estancias h&#237;bridas: corta, media y larga duraci&#243;n.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">RW</span>Operador 03 / 07</div><h3>Retreats & workation</h3><p>Programaci&#243;n por cohortes y estancias con prop&#243;sito.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">RP</span>Operador 04 / 07</div><h3>Hospitality rural premium</h3><p>Autenticidad andaluza con est&#225;ndar internacional.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">GO</span>Operador 05 / 07</div><h3>Gestores con capacidad operativa</h3><p>Inmobiliario con m&#250;sculo de operaci&#243;n real.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">CP</span>Operador 06 / 07</div><h3>Comunidad propia</h3><p>Audiencia fiel que llena calendario y ocupaci&#243;n.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">JV</span>Operador 07 / 07</div><h3>Plataformas & JV</h3><p>Arrendamiento, gesti&#243;n, revenue share o joint venture.</p></article></div><div class="process-controls"><button class="process-btn" type="button" data-prev aria-label="Anterior">&#8592;</button><button class="process-btn" type="button" data-next aria-label="Siguiente">&#8594;</button><span class="process-count" data-count>01 / 07</span></div></div></div>
         </div>
       </section>
 
@@ -2125,7 +2167,7 @@
               <a class="button secondary" href="/ophao-subra/book-call">Book a Discovery Call</a>
             </div>
           </div>
-          <div class="operator-list"><div class="operator-card"><span class="operator-glyph">BH</span><div class="operator-card-body"><strong class="operator-name">Boutique hotel operators</strong><span class="operator-desc">Design-led brands with signature service.</span></div></div><div class="operator-card"><span class="operator-glyph">AF</span><div class="operator-card-body"><strong class="operator-name">Flexible-stay managers</strong><span class="operator-desc">Hybrid stays: short, mid and long term.</span></div></div><div class="operator-card"><span class="operator-glyph">RW</span><div class="operator-card-body"><strong class="operator-name">Retreats & workation</strong><span class="operator-desc">Cohort programming and purpose-driven stays.</span></div></div><div class="operator-card"><span class="operator-glyph">RP</span><div class="operator-card-body"><strong class="operator-name">Premium rural hospitality</strong><span class="operator-desc">Andalusian authenticity, international standard.</span></div></div><div class="operator-card"><span class="operator-glyph">GO</span><div class="operator-card-body"><strong class="operator-name">Operationally capable managers</strong><span class="operator-desc">Real estate with true operating muscle.</span></div></div><div class="operator-card"><span class="operator-glyph">CP</span><div class="operator-card-body"><strong class="operator-name">Own-community brands</strong><span class="operator-desc">Loyal audience that fills calendar and occupancy.</span></div></div><div class="operator-card"><span class="operator-glyph">JV</span><div class="operator-card-body"><strong class="operator-name">Platforms & JV</strong><span class="operator-desc">Lease, management, revenue share or joint venture.</span></div></div></div>
+          <div class="process-slider op-slider" data-slider><div class="process-content op-content"><div class="process-progress"><button class="process-dot" type="button" aria-label="Operator 01"><span></span></button><button class="process-dot" type="button" aria-label="Operator 02"><span></span></button><button class="process-dot" type="button" aria-label="Operator 03"><span></span></button><button class="process-dot" type="button" aria-label="Operator 04"><span></span></button><button class="process-dot" type="button" aria-label="Operator 05"><span></span></button><button class="process-dot" type="button" aria-label="Operator 06"><span></span></button><button class="process-dot" type="button" aria-label="Operator 07"><span></span></button></div><div class="process-slides"><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">BH</span>Operator 01 / 07</div><h3>Boutique hotel operators</h3><p>Design-led brands with signature service.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">AF</span>Operator 02 / 07</div><h3>Flexible-stay managers</h3><p>Hybrid stays: short, mid and long term.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">RW</span>Operator 03 / 07</div><h3>Retreats & workation</h3><p>Cohort programming and purpose-driven stays.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">RP</span>Operator 04 / 07</div><h3>Premium rural hospitality</h3><p>Andalusian authenticity, international standard.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">GO</span>Operator 05 / 07</div><h3>Operationally capable managers</h3><p>Real estate with true operating muscle.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">CP</span>Operator 06 / 07</div><h3>Own-community brands</h3><p>Loyal audience that fills calendar and occupancy.</p></article><article class="process-slide op-slide"><div class="eyebrow op-eyebrow"><span class="op-badge">JV</span>Operator 07 / 07</div><h3>Platforms & JV</h3><p>Lease, management, revenue share or joint venture.</p></article></div><div class="process-controls"><button class="process-btn" type="button" data-prev aria-label="Previous">&#8592;</button><button class="process-btn" type="button" data-next aria-label="Next">&#8594;</button><span class="process-count" data-count>01 / 07</span></div></div></div>
         </div>
       </section>
 
