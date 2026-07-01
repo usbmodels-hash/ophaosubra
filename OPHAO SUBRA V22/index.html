@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OPHAO SUBRA | Operadores Hospitality</title>
-  <meta name="description" content="Activo hospitality built-to-suit en El Burgo, Málaga, diseñado para flexible living, workation, retreats y demanda adventure.">
+  <meta name="description" content="Activo hospitality built-to-suit en El Burgo, MÃ¡laga, diseÃ±ado para flexible living, workation, retreats y demanda adventure.">
   <style>
     :root {
       --graphite: #171615;
@@ -1324,6 +1324,25 @@
     .midcta-band .btn-primary{background:var(--fluor);color:#1a1206;font-weight:700;padding:14px 22px;border-radius:8px;text-decoration:none;}
     .midcta-band .btn-secondary{border:1px solid rgba(201,161,90,0.6);color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;}
     @media (max-width:720px){.midcta-band .midcta-actions{width:100%;}.midcta-band .btn-primary,.midcta-band .btn-secondary{flex:1 1 auto;text-align:center;}}
+
+    /* v23 operator profile cards (section 02) */
+    .operator-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .operator-card { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 14px; border: 1px solid rgba(169,111,76,.32); background: rgba(242,234,223,.05); border-radius: var(--radius); padding: 16px 18px; }
+    .operator-glyph { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(243,255,59,.30); background: rgba(23,22,21,.42); color: var(--fluor); font-weight: 900; font-size: 14px; letter-spacing: .04em; text-shadow: 0 0 12px rgba(243,255,59,.24); }
+    .operator-card-body { display: grid; gap: 3px; }
+    .operator-name { font-size: 14.5px; font-weight: 800; line-height: 1.25; color: var(--bone); }
+    .operator-desc { font-size: 13px; line-height: 1.5; color: rgba(242,234,223,.72); }
+    @media (max-width: 900px){ .operator-list { grid-template-columns: 1fr; } }
+
+    /* v23 territory positioning caption + card emphasis (section 04) */
+    .territory-hero-map.location-study figcaption { display: block; }
+    .location-study .microdata.territory-tag { display: inline-flex; margin: 0 0 12px; }
+    .territory-hero-map.location-study figcaption p { max-width: 900px; }
+    .territory-cards .card { position: relative; padding-left: 26px; background: rgba(242,234,223,.075); border-color: rgba(169,111,76,.42); }
+    .territory-cards .card::before { content: ""; position: absolute; left: 0; top: 16px; bottom: 16px; width: 4px; border-radius: 4px; background: linear-gradient(180deg, var(--fluor), rgba(169,111,76,.65)); }
+    .territory-cards .card .num { display: flex; align-items: baseline; gap: 8px; font-size: 13px; }
+    .territory-cards .card .num::before { content: counter(terrcard, decimal-leading-zero); counter-increment: terrcard; font-size: 12px; opacity: .85; }
+    .territory-cards { counter-reset: terrcard; }
 </style>
 </head>
 <body>
@@ -1332,14 +1351,14 @@
       <a class="brand" id="brandLink" href="#es-top">OPHAO<br>SUBRA</a>
       <div class="nav-right">
         <div class="navlinks" id="navLinks">
-          <a data-nav="vision" href="#es-vision">Visión</a>
+          <a data-nav="vision" href="#es-vision">VisiÃ³n</a>
           <a data-nav="market" href="#es-market">Mercado</a>
           <a data-nav="flex" href="#es-flex">Flexibilidad</a>
           <a data-nav="contract" href="#es-contracts">Contratos</a>
           <a data-nav="gallery" href="#es-gallery">Espacios</a>
         </div>
         <div class="lang-switch" aria-label="Language selector">
-          <button class="lang-btn active" data-lang="es" aria-label="Cambiar a español" title="Español"><span class="flag flag-es" aria-hidden="true"></span><span class="lang-code">ES</span></button>
+          <button class="lang-btn active" data-lang="es" aria-label="Cambiar a espaÃ±ol" title="EspaÃ±ol"><span class="flag flag-es" aria-hidden="true"></span><span class="lang-code">ES</span></button>
           <button class="lang-btn" data-lang="en" aria-label="Switch to English" title="English"><span class="flag flag-en" aria-hidden="true"></span><span class="lang-code">EN</span></button>
         </div>
         <a class="nav-cta" id="navCta" href="#es-contact">Solicitar acceso</a>
@@ -1353,21 +1372,21 @@
         <div class="hero-media"><img src="assets/images/facade-arrival.webp" alt="Fachada principal de OPHAO SUBRA en El Burgo"></div>
         <div class="hero-content">
           <div>
-            <div class="kicker">Oportunidad hospitality · Built-to-suit · El Burgo, Málaga</div>
-            <h1>OPHAO SUBRA: oportunidad hospitality built-to-suit en el corazón de la Sierra de las Nieves</h1>
-            <p>Un activo singular en El Burgo, Málaga, con hasta 20 llaves objetivo comercial y configuración final adaptable junto al operador seleccionado.</p>
+            <div class="kicker">Oportunidad hospitality Â· Built-to-suit Â· El Burgo, MÃ¡laga</div>
+            <h1>OPHAO SUBRA: oportunidad hospitality built-to-suit en el corazÃ³n de la Sierra de las Nieves</h1>
+            <p>Un activo singular en El Burgo, MÃ¡laga, con hasta 20 llaves objetivo comercial y configuraciÃ³n final adaptable junto al operador seleccionado.</p>
             <div class="button-row">
               <a class="button primary" href="/ophao-subra/access">Solicitar acceso al Data Room</a>
               <a class="button secondary" href="/ophao-subra/book-call">Agendar discovery call</a>
             </div>
           </div>
           <aside class="hero-panel">
-            <p>OPHAO SUBRA se plantea como una rehabilitación estratégica para operadores profesionales de hospitality rural premium, flexible living, retreats y workation.</p>
+            <p>OPHAO SUBRA se plantea como una rehabilitaciÃ³n estratÃ©gica para operadores profesionales de hospitality rural premium, flexible living, retreats y workation.</p>
             <div class="mini-grid">
               <div class="mini-stat"><b>Hasta 20</b><span>llaves objetivo comercial</span></div>
-              <div class="mini-stat"><b>C/ Mesones 7</b><span>El Burgo, Málaga</span></div>
-              <div class="mini-stat"><b>472 / 488 m²</b><span>parcela / construcción catastral</span></div>
-              <div class="mini-stat"><b>Pre-diseño</b><span>built-to-suit con operador</span></div>
+              <div class="mini-stat"><b>C/ Mesones 7</b><span>El Burgo, MÃ¡laga</span></div>
+              <div class="mini-stat"><b>472 / 488 mÂ²</b><span>parcela / construcciÃ³n catastral</span></div>
+              <div class="mini-stat"><b>Pre-diseÃ±o</b><span>built-to-suit con operador</span></div>
             </div>
           </aside>
         </div>
@@ -1375,19 +1394,19 @@
 
       <section id="es-asset-facts" class="section bone">
         <div class="wrap">
-          <div class="kicker">00 · Asset Facts</div>
+          <div class="kicker">00 Â· Asset Facts</div>
           <h2>Datos clave del activo</h2>
-          <p class="lead">Información base para que operadores y gestores puedan evaluar el encaje inicial antes de solicitar acceso al Data Room.</p>
+          <p class="lead">InformaciÃ³n base para que operadores y gestores puedan evaluar el encaje inicial antes de solicitar acceso al Data Room.</p>
           <div class="asset-facts-grid">
             <div class="asset-fact"><span>Activo</span><b>OPHAO SUBRA</b></div>
-            <div class="asset-fact"><span>Ubicación</span><b>Calle Mesones 7, El Burgo, Málaga</b></div>
-            <div class="asset-fact"><span>Parcela</span><b>472 m²</b></div>
-            <div class="asset-fact"><span>Construcción</span><b>488 m²</b></div>
-            <div class="asset-fact"><span>Año</span><b>1945</b></div>
+            <div class="asset-fact"><span>UbicaciÃ³n</span><b>Calle Mesones 7, El Burgo, MÃ¡laga</b></div>
+            <div class="asset-fact"><span>Parcela</span><b>472 mÂ²</b></div>
+            <div class="asset-fact"><span>ConstrucciÃ³n</span><b>488 mÂ²</b></div>
+            <div class="asset-fact"><span>AÃ±o</span><b>1945</b></div>
             <div class="asset-fact"><span>Uso actual</span><b>Residencial</b></div>
             <div class="asset-fact"><span>Llaves objetivo</span><b>Hasta 20</b></div>
             <div class="asset-fact"><span>Concepto</span><b>Hospitality / flexible living / retreats / workation</b></div>
-            <div class="asset-fact"><span>Fase</span><b>Pre-diseño final / built-to-suit</b></div>
+            <div class="asset-fact"><span>Fase</span><b>Pre-diseÃ±o final / built-to-suit</b></div>
           </div>
         </div>
       </section>
@@ -1395,13 +1414,13 @@
       <section id="es-vision" class="section pine">
         <div class="wrap split wide-left">
           <div>
-            <div class="kicker">01 · Para operadores, no inversores</div>
-            <h2>No estamos vendiendo habitaciones. Estamos diseñando una plataforma operativa.</h2>
-            <p class="lead">ECOCERTER GROUP promueve, construye y entrega el activo. El operador participa en la definición, adapta el producto a su modelo y explota el negocio bajo una estructura contractual profesional.</p>
+            <div class="kicker">01 Â· Para operadores, no inversores</div>
+            <h2>No estamos vendiendo habitaciones. Estamos diseÃ±ando una plataforma operativa.</h2>
+            <p class="lead">ECOCERTER GROUP promueve, construye y entrega el activo. El operador participa en la definiciÃ³n, adapta el producto a su modelo y explota el negocio bajo una estructura contractual profesional.</p>
             <div class="cards">
-              <div class="card"><div class="num">Promotor</div><h3>ECOCERTER GROUP</h3><p>Asume el desarrollo inmobiliario, la inversión, la rehabilitación y la entrega del activo.</p></div>
-              <div class="card"><div class="num">Operador</div><h3>Marca + gestión</h3><p>Aporta know-how, comercialización, sistemas, comunidad, operación diaria y experiencia huésped.</p></div>
-              <div class="card"><div class="num">Momento clave</div><h3>Antes del proyecto cerrado</h3><p>El operador puede influir en programa, FF&E, espacios comunes, tecnología y lógica operativa.</p></div>
+              <div class="card"><div class="num">Promotor</div><h3>ECOCERTER GROUP</h3><p>Asume el desarrollo inmobiliario, la inversiÃ³n, la rehabilitaciÃ³n y la entrega del activo.</p></div>
+              <div class="card"><div class="num">Operador</div><h3>Marca + gestiÃ³n</h3><p>Aporta know-how, comercializaciÃ³n, sistemas, comunidad, operaciÃ³n diaria y experiencia huÃ©sped.</p></div>
+              <div class="card"><div class="num">Momento clave</div><h3>Antes del proyecto cerrado</h3><p>El operador puede influir en programa, FF&E, espacios comunes, tecnologÃ­a y lÃ³gica operativa.</p></div>
             </div>
           </div>
           <div class="image-shell"><img src="assets/images/courtyard-pool-arrival.webp" alt="Fachada de OPHAO SUBRA al atardecer en El Burgo"></div>
@@ -1411,23 +1430,15 @@
       <section id="es-target-operators" class="section dark-soft">
         <div class="wrap operator-layout">
           <div>
-            <div class="kicker">02 · Operadores objetivo</div>
-            <h2>Qué operadores buscamos</h2>
-            <p class="lead">Buscamos operadores capaces de convertir un activo singular en una propuesta hospitality diferenciada, con sensibilidad por el destino, visión operativa y capacidad de activar demanda.</p>
+            <div class="kicker">02 Â· Operadores objetivo</div>
+            <h2>QuÃ© operadores buscamos</h2>
+            <p class="lead">Buscamos operadores capaces de convertir un activo singular en una propuesta hospitality diferenciada, con sensibilidad por el destino, visiÃ³n operativa y capacidad de activar demanda.</p>
             <div class="button-row">
               <a class="button primary" href="/ophao-subra/access">Solicitar acceso al Data Room</a>
               <a class="button secondary" href="/ophao-subra/book-call">Agendar discovery call</a>
             </div>
           </div>
-          <div class="operator-list">
-            <div class="operator-pill">Operadores hoteleros boutique</div>
-            <div class="operator-pill">Gestores de alojamientos flexibles</div>
-            <div class="operator-pill">Operadores de retreats y workation</div>
-            <div class="operator-pill">Marcas de hospitality rural premium</div>
-            <div class="operator-pill">Gestores inmobiliarios con capacidad operativa</div>
-            <div class="operator-pill">Operadores con comunidad propia</div>
-            <div class="operator-pill">Plataformas interesadas en arrendamiento, gestión, revenue share o joint venture</div>
-          </div>
+          <div class="operator-list"><div class="operator-card"><span class="operator-glyph">BH</span><div class="operator-card-body"><strong class="operator-name">Hoteleros boutique</strong><span class="operator-desc">Marcas con criterio de diseño y servicio de autor.</span></div></div><div class="operator-card"><span class="operator-glyph">AF</span><div class="operator-card-body"><strong class="operator-name">Alojamientos flexibles</strong><span class="operator-desc">Estancias híbridas: corta, media y larga duración.</span></div></div><div class="operator-card"><span class="operator-glyph">RW</span><div class="operator-card-body"><strong class="operator-name">Retreats & workation</strong><span class="operator-desc">Programación por cohortes y estancias con propósito.</span></div></div><div class="operator-card"><span class="operator-glyph">RP</span><div class="operator-card-body"><strong class="operator-name">Hospitality rural premium</strong><span class="operator-desc">Autenticidad andaluza con estándar internacional.</span></div></div><div class="operator-card"><span class="operator-glyph">GO</span><div class="operator-card-body"><strong class="operator-name">Gestores con capacidad operativa</strong><span class="operator-desc">Inmobiliario con músculo de operación real.</span></div></div><div class="operator-card"><span class="operator-glyph">CP</span><div class="operator-card-body"><strong class="operator-name">Comunidad propia</strong><span class="operator-desc">Audiencia fiel que llena calendario y ocupación.</span></div></div><div class="operator-card"><span class="operator-glyph">JV</span><div class="operator-card-body"><strong class="operator-name">Plataformas & JV</strong><span class="operator-desc">Arrendamiento, gestión, revenue share o joint venture.</span></div></div></div>
         </div>
       </section>
 
@@ -1435,15 +1446,15 @@
         <div class="wrap split wide-right">
           <div class="image-shell"><img src="assets/images/courtyard-pool.webp" alt="Patio boutique con piscina"></div>
           <div>
-            <div class="kicker">03 · Qué construimos</div>
+            <div class="kicker">03 Â· QuÃ© construimos</div>
             <h2>Un activo para alojar, trabajar, reunirse y operar.</h2>
-            <p>El programa preliminar contempla una configuración adaptable, con 16 habitaciones privadas base y potencial de ampliación hasta 20 llaves comerciales, sujeto a definición técnica y programa final.</p>
-            <p>La lógica no es imponer un producto cerrado, sino desarrollar un activo adaptable a operadores de flexible living, workation, retreats, wellness, hospitality experiencial y grupos de turismo activo.</p>
+            <p>El programa preliminar contempla una configuraciÃ³n adaptable, con 16 habitaciones privadas base y potencial de ampliaciÃ³n hasta 20 llaves comerciales, sujeto a definiciÃ³n tÃ©cnica y programa final.</p>
+            <p>La lÃ³gica no es imponer un producto cerrado, sino desarrollar un activo adaptable a operadores de flexible living, workation, retreats, wellness, hospitality experiencial y grupos de turismo activo.</p>
             <div class="facts">
               <div class="fact"><b>16</b><span>Habitaciones privadas</span></div>
               <div class="fact"><b>1</b><span>Coworking real</span></div>
               <div class="fact"><b>1</b><span>Patio/piscina</span></div>
-              <div class="fact"><b>∞</b><span>Formatos de operación</span></div>
+              <div class="fact"><b>â</b><span>Formatos de operaciÃ³n</span></div>
             </div>
           </div>
         </div>
@@ -1452,23 +1463,23 @@
       <section class="section pine territory-section">
         <div class="wrap territory-layout">
           <div class="territory-copy">
-            <div class="kicker">04 · Sierra de las Nieves</div>
+            <div class="kicker">04 Â· Sierra de las Nieves</div>
             <h2>Sierra de las Nieves + Ronda: un territorio con nombre propio.</h2>
-            <p class="lead">OPHAO SUBRA se apalanca en su ubicación en El Burgo, dentro del ecosistema protegido de Sierra de las Nieves y con conexión directa al imaginario internacional de Ronda. Para un operador, esto no significa solo paisaje: significa relato, reconocimiento, diferenciación, programación outdoor, estancias de desconexión y una alternativa real al alojamiento urbano o costero.</p>
-            <p>La propuesta permite construir un producto hospitality conectado con montaña, senderismo, mototurismo, retiros, trabajo remoto, comunidad internacional y escapadas hacia Ronda, manteniendo la autenticidad de un pueblo andaluz.</p>
+            <p class="lead">OPHAO SUBRA se apalanca en su ubicaciÃ³n en El Burgo, dentro del ecosistema protegido de Sierra de las Nieves y con conexiÃ³n directa al imaginario internacional de Ronda. Para un operador, esto no significa solo paisaje: significa relato, reconocimiento, diferenciaciÃ³n, programaciÃ³n outdoor, estancias de desconexiÃ³n y una alternativa real al alojamiento urbano o costero.</p>
+            <p>La propuesta permite construir un producto hospitality conectado con montaÃ±a, senderismo, mototurismo, retiros, trabajo remoto, comunidad internacional y escapadas hacia Ronda, manteniendo la autenticidad de un pueblo andaluz.</p>
           </div>
           <figure class="location-study territory-proof territory-hero-map">
             <img src="assets/images/el-burgo-paisaje.webp" alt="Mapa de ubicacion de OPHAO SUBRA en El Burgo: 25 min al Caminito del Rey, 35 min a Ronda, 40 min a Marbella y 50 min a Malaga" loading="lazy">
             <figcaption>
-              <div class="microdata">Territory positioning study</div>
+              <div class="microdata territory-tag">Territory positioning study</div>
               <p><strong>Un activo dentro del pueblo. Una plataforma dentro del territorio.</strong><br>El Burgo aporta autenticidad, Sierra de las Nieves aporta naturaleza protegida y Ronda aporta reconocimiento internacional.</p>
             </figcaption>
           </figure>
           <div class="cards location-cards territory-cards">
-            <div class="card"><div class="num">Paisaje protegido</div><p>Sierra de las Nieves aporta naturaleza protegida; Ronda aporta notoriedad internacional, cultura, rutas escénicas y un imaginario turístico ya consolidado.</p></div>
-            <div class="card"><div class="num">Ronda como imán</div><p>La cercanía a Ronda permite al operador construir paquetes, escapadas, day trips y contenido comercial alrededor de un destino reconocido globalmente.</p></div>
-            <div class="card"><div class="num">Outdoor premium</div><p>Senderismo, rutas escénicas hacia Ronda, moto, ciclismo y experiencias de naturaleza pueden alimentar programación, paquetes y ocupación.</p></div>
-            <div class="card"><div class="num">Retiro operativo</div><p>El entorno ayuda a vender concentración, bienestar, comunidad y desconexión, sumando además el atractivo de Ronda como destino aspiracional próximo.</p></div>
+            <div class="card"><div class="num">Paisaje protegido</div><p>Sierra de las Nieves aporta naturaleza protegida; Ronda aporta notoriedad internacional, cultura, rutas escÃ©nicas y un imaginario turÃ­stico ya consolidado.</p></div>
+            <div class="card"><div class="num">Ronda como imÃ¡n</div><p>La cercanÃ­a a Ronda permite al operador construir paquetes, escapadas, day trips y contenido comercial alrededor de un destino reconocido globalmente.</p></div>
+            <div class="card"><div class="num">Outdoor premium</div><p>Senderismo, rutas escÃ©nicas hacia Ronda, moto, ciclismo y experiencias de naturaleza pueden alimentar programaciÃ³n, paquetes y ocupaciÃ³n.</p></div>
+            <div class="card"><div class="num">Retiro operativo</div><p>El entorno ayuda a vender concentraciÃ³n, bienestar, comunidad y desconexiÃ³n, sumando ademÃ¡s el atractivo de Ronda como destino aspiracional prÃ³ximo.</p></div>
           </div>
         </div>
       </section>
@@ -1487,39 +1498,39 @@
       </section>
       <section id="es-market" class="section dark">
         <div class="wrap">
-          <div class="kicker">05 · Evidencia de mercado</div>
+          <div class="kicker">05 Â· Evidencia de mercado</div>
           <h2>Argumentos que un operador puede contrastar.</h2>
-          <p class="lead">El activo se posiciona en la intersección de varios motores de demanda: conectividad internacional, fortaleza turística de Andalucía, territorio natural protegido, comportamiento de trabajo remoto, crecimiento del flexible living y demanda de turismo activo.</p>
+          <p class="lead">El activo se posiciona en la intersecciÃ³n de varios motores de demanda: conectividad internacional, fortaleza turÃ­stica de AndalucÃ­a, territorio natural protegido, comportamiento de trabajo remoto, crecimiento del flexible living y demanda de turismo activo.</p>
 
           <div class="market-positioning">
             <div class="positioning-card">
               <div class="microdata">Location intelligence</div>
               <h3>Entre aeropuerto, costa premium y naturaleza protegida.</h3>
-              <p>OPHAO SUBRA no depende solo de El Burgo: se apoya en una geografía híbrida entre Málaga, Marbella, Ronda y Sierra de las Nieves.</p>
-              <div class="positioning-line">Málaga conecta. Marbella cualifica. Ronda atrae. Sierra de las Nieves diferencia. El Burgo aloja la experiencia.</div>
+              <p>OPHAO SUBRA no depende solo de El Burgo: se apoya en una geografÃ­a hÃ­brida entre MÃ¡laga, Marbella, Ronda y Sierra de las Nieves.</p>
+              <div class="positioning-line">MÃ¡laga conecta. Marbella cualifica. Ronda atrae. Sierra de las Nieves diferencia. El Burgo aloja la experiencia.</div>
             </div>
             <figure class="location-study market-intel">
-              <img src="assets/images/location-hero-es.webp" alt="Mapa de ubicación de OPHAO SUBRA en El Burgo con tiempos a Caminito del Rey, Ronda, Marbella y Málaga" loading="lazy">
+              <img src="assets/images/location-hero-es.webp" alt="Mapa de ubicaciÃ³n de OPHAO SUBRA en El Burgo con tiempos a Caminito del Rey, Ronda, Marbella y MÃ¡laga" loading="lazy">
               <figcaption>
                 <div class="microdata">Asset context map</div>
-                <p>Visualización conceptual de localización y conexiones principales para presentar el activo como una base hospitality conectada con los grandes motores de demanda de la provincia.</p>
+                <p>VisualizaciÃ³n conceptual de localizaciÃ³n y conexiones principales para presentar el activo como una base hospitality conectada con los grandes motores de demanda de la provincia.</p>
               </figcaption>
             </figure>
           </div>
 
           <div class="stats">
-            <div class="stat"><b>26,7M+</b><small>Pasajeros en el Aeropuerto de Málaga-Costa del Sol en 2025, su mejor año histórico según Aena.</small></div>
-            <div class="stat"><b>37,9M</b><small>Visitantes en Andalucía en 2025, descrito por la Junta como el mejor año turístico de su historia.</small></div>
-            <div class="stat"><b>22.979 ha</b><small>Superficie del Parque Nacional Sierra de las Nieves según ficha técnica de MITECO.</small></div>
+            <div class="stat"><b>26,7M+</b><small>Pasajeros en el Aeropuerto de MÃ¡laga-Costa del Sol en 2025, su mejor aÃ±o histÃ³rico segÃºn Aena.</small></div>
+            <div class="stat"><b>37,9M</b><small>Visitantes en AndalucÃ­a en 2025, descrito por la Junta como el mejor aÃ±o turÃ­stico de su historia.</small></div>
+            <div class="stat"><b>22.979 ha</b><small>Superficie del Parque Nacional Sierra de las Nieves segÃºn ficha tÃ©cnica de MITECO.</small></div>
           </div>
 
           <div class="evidence-panels">
             <article class="evidence">
-              <img src="assets/images/malaga-airport.png" alt="Aeropuerto de Málaga como puerta internacional">
+              <img src="assets/images/malaga-airport.png" alt="Aeropuerto de MÃ¡laga como puerta internacional">
               <div class="evidence-content">
                 <div class="microdata">Acceso</div>
-                <h3>Málaga como puerta internacional</h3>
-                <p>El aeropuerto de Málaga aporta la conectividad necesaria para operadores orientados a remote workers europeos, retreats, grupos y clientes de turismo activo.</p>
+                <h3>MÃ¡laga como puerta internacional</h3>
+                <p>El aeropuerto de MÃ¡laga aporta la conectividad necesaria para operadores orientados a remote workers europeos, retreats, grupos y clientes de turismo activo.</p>
               </div>
             </article>
             <article class="evidence">
@@ -1527,15 +1538,15 @@
               <div class="evidence-content">
                 <div class="microdata">Territorio</div>
                 <h3>Sierra de las Nieves y Ronda</h3>
-                <p>Sierra de las Nieves aporta paisaje protegido; Ronda añade reconocimiento internacional, cultura, rutas escénicas y atractivo turístico premium.</p>
+                <p>Sierra de las Nieves aporta paisaje protegido; Ronda aÃ±ade reconocimiento internacional, cultura, rutas escÃ©nicas y atractivo turÃ­stico premium.</p>
               </div>
             </article>
             <article class="evidence">
-              <img src="assets/images/demand-mix.png" alt="Múltiples segmentos en un solo activo">
+              <img src="assets/images/demand-mix.png" alt="MÃºltiples segmentos en un solo activo">
               <div class="evidence-content">
                 <div class="microdata">Demanda</div>
-                <h3>Múltiples segmentos, un solo activo</h3>
-                <p>Teletrabajadores, empresas, organizadores de retreats, viajeros outdoor y motoristas pueden generar ocupación complementaria durante el año.</p>
+                <h3>MÃºltiples segmentos, un solo activo</h3>
+                <p>Teletrabajadores, empresas, organizadores de retreats, viajeros outdoor y motoristas pueden generar ocupaciÃ³n complementaria durante el aÃ±o.</p>
               </div>
             </article>
           </div>
@@ -1543,14 +1554,14 @@
       </section>
       <section class="section limestone">
         <div class="wrap split reverse">
-          <div class="image-shell"><img src="assets/images/private-room.webp" alt="Habitación privada OPHAO SUBRA"></div>
+          <div class="image-shell"><img src="assets/images/private-room.webp" alt="HabitaciÃ³n privada OPHAO SUBRA"></div>
           <div>
-            <div class="kicker">06 · Capacidad</div>
-            <h2>Hasta 20 llaves objetivo. Múltiples formatos de explotación.</h2>
-            <p>El programa alojativo preliminar puede combinar estancias individuales, alquiler exclusivo del activo y programas de grupo curados. La configuración final de llaves, habitaciones y espacios comunes se definirá junto al operador seleccionado, sujeta a viabilidad técnica y programa final.</p>
+            <div class="kicker">06 Â· Capacidad</div>
+            <h2>Hasta 20 llaves objetivo. MÃºltiples formatos de explotaciÃ³n.</h2>
+            <p>El programa alojativo preliminar puede combinar estancias individuales, alquiler exclusivo del activo y programas de grupo curados. La configuraciÃ³n final de llaves, habitaciones y espacios comunes se definirÃ¡ junto al operador seleccionado, sujeta a viabilidad tÃ©cnica y programa final.</p>
             <div class="cards">
-              <div class="card"><div class="num">Formatos</div><p>Flexible living, workation, corporate offsites, retreats, grupos de turismo activo y programación estacional.</p></div>
-              <div class="card"><div class="num">Habitación</div><p>Cama premium, baño privado, escritorio de apoyo, almacenaje y estándar suficiente para estancias cortas y medias.</p></div>
+              <div class="card"><div class="num">Formatos</div><p>Flexible living, workation, corporate offsites, retreats, grupos de turismo activo y programaciÃ³n estacional.</p></div>
+              <div class="card"><div class="num">HabitaciÃ³n</div><p>Cama premium, baÃ±o privado, escritorio de apoyo, almacenaje y estÃ¡ndar suficiente para estancias cortas y medias.</p></div>
               <div class="card"><div class="num">Full buyout</div><p>Posibilidad de reservar el activo completo para empresas, comunidades, retiros y grupos adventure.</p></div>
             </div>
           </div>
@@ -1560,19 +1571,19 @@
       <section id="es-flex" class="section mauve">
         <div class="wrap split wide-left">
           <div>
-            <div class="kicker">07 · Flexibilidad built-to-suit</div>
-            <h2>El operador entra antes de que el diseño quede cerrado.</h2>
-            <p class="lead">OPHAO SUBRA puede ajustarse a los requisitos operativos del operador seleccionado antes del proyecto técnico definitivo: distribución, espacios comunes, FF&E, branding, tecnología, accesos, programa F&B e infraestructura adventure.</p>
+            <div class="kicker">07 Â· Flexibilidad built-to-suit</div>
+            <h2>El operador entra antes de que el diseÃ±o quede cerrado.</h2>
+            <p class="lead">OPHAO SUBRA puede ajustarse a los requisitos operativos del operador seleccionado antes del proyecto tÃ©cnico definitivo: distribuciÃ³n, espacios comunes, FF&E, branding, tecnologÃ­a, accesos, programa F&B e infraestructura adventure.</p>
             <div class="system-grid">
-              <div class="system-item"><b>Room mix</b>Configuración de habitaciones y baños.</div>
+              <div class="system-item"><b>Room mix</b>ConfiguraciÃ³n de habitaciones y baÃ±os.</div>
               <div class="system-item"><b>Coworking</b>Puestos, cabinas, meeting points y conectividad.</div>
               <div class="system-item"><b>F&B</b>Cocina social, desayunos, coffee point o self-service.</div>
-              <div class="system-item"><b>Access</b>Check-in, cerraduras, tecnología y operación ligera.</div>
-              <div class="system-item"><b>FF&E</b>Mobiliario, equipamiento y estándar de marca.</div>
+              <div class="system-item"><b>Access</b>Check-in, cerraduras, tecnologÃ­a y operaciÃ³n ligera.</div>
+              <div class="system-item"><b>FF&E</b>Mobiliario, equipamiento y estÃ¡ndar de marca.</div>
               <div class="system-item"><b>Branding</b>Identidad final del operador o co-branding.</div>
               <div class="system-item"><b>Retreats</b>Sala polivalente, workshops y formato grupo.</div>
               <div class="system-item"><b>Adventure</b>Lockers, aparcamiento seguro y punto de briefing.</div>
-              <div class="system-item"><b>Además, el operador define</b>número final de llaves, mix de habitaciones, modelo de check-in y estructura contractual.</div>
+              <div class="system-item"><b>AdemÃ¡s, el operador define</b>nÃºmero final de llaves, mix de habitaciones, modelo de check-in y estructura contractual.</div>
             </div>
           </div>
           <div class="image-shell"><img src="assets/images/multipurpose-room.webp" alt="Sala polivalente OPHAO SUBRA"></div>
@@ -1585,10 +1596,10 @@
             <img src="assets/images/coworking.webp" alt="Coworking profesional OPHAO SUBRA">
           </div>
           <div>
-            <div class="kicker">08 · Demand stack</div>
+            <div class="kicker">08 Â· Demand stack</div>
             <h2>Naturaleza, trabajo remoto, comunidad y aventura en un solo activo.</h2>
-            <p>La tesis comercial no depende de un único segmento. OPHAO SUBRA permite al operador activar capas de demanda compatibles entre sí: remote workers, nómadas digitales, equipos corporativos, organizadores de retreats, turismo activo, mototurismo internacional y escapadas vinculadas a Ronda.</p>
-            <p>Cada capa se apoya en los mismos espacios operativos, de modo que la ocupación se sostiene durante todo el año sin depender de un solo perfil de cliente.</p>
+            <p>La tesis comercial no depende de un Ãºnico segmento. OPHAO SUBRA permite al operador activar capas de demanda compatibles entre sÃ­: remote workers, nÃ³madas digitales, equipos corporativos, organizadores de retreats, turismo activo, mototurismo internacional y escapadas vinculadas a Ronda.</p>
+            <p>Cada capa se apoya en los mismos espacios operativos, de modo que la ocupaciÃ³n se sostiene durante todo el aÃ±o sin depender de un solo perfil de cliente.</p>
           </div>
         </div>
         <div class="wrap">
@@ -1597,7 +1608,7 @@
               <img src="assets/images/community-kitchen.webp" alt="Cocina comunitaria OPHAO SUBRA">
               <figcaption>
                 <strong>Estancias medias</strong>
-                <span>Cocina comunitaria y zonas comunes sostienen coliving, workation y flexible living con más profundidad que la pernoctación. La vida compartida se convierte en retención y diferenciación.</span>
+                <span>Cocina comunitaria y zonas comunes sostienen coliving, workation y flexible living con mÃ¡s profundidad que la pernoctaciÃ³n. La vida compartida se convierte en retenciÃ³n y diferenciaciÃ³n.</span>
               </figcaption>
             </figure>
             <figure class="story-card">
@@ -1610,8 +1621,8 @@
             <figure class="story-card">
               <img src="assets/images/facade-arrival.webp" alt="Entorno de Ronda y sierra">
               <figcaption>
-                <strong>Ocupación multi-capa</strong>
-                <span>El mototurismo y las escapadas a Ronda no son un operador, sino una fuente adicional de ocupación y diferenciación para quien gestione el activo durante todo el año.</span>
+                <strong>OcupaciÃ³n multi-capa</strong>
+                <span>El mototurismo y las escapadas a Ronda no son un operador, sino una fuente adicional de ocupaciÃ³n y diferenciaciÃ³n para quien gestione el activo durante todo el aÃ±o.</span>
               </figcaption>
             </figure>
           </div>
@@ -1620,20 +1631,20 @@
 
       <section id="es-contracts" class="section bone">
         <div class="wrap">
-          <div class="kicker">09 · Modelos de contrato</div>
-          <h2>Estructuras comerciales flexibles según operador y fase.</h2>
-          <p class="lead">Estamos abiertos a diferentes estructuras, siempre que exista alineación estratégica entre activo, operador y destino. La prioridad es equilibrar seguridad inmobiliaria, viabilidad operativa y potencial de crecimiento.</p>
+          <div class="kicker">09 Â· Modelos de contrato</div>
+          <h2>Estructuras comerciales flexibles segÃºn operador y fase.</h2>
+          <p class="lead">Estamos abiertos a diferentes estructuras, siempre que exista alineaciÃ³n estratÃ©gica entre activo, operador y destino. La prioridad es equilibrar seguridad inmobiliaria, viabilidad operativa y potencial de crecimiento.</p>
 
           <div class="contracts-shell">
             <div class="contract-strategy">
 
               <aside class="contract-guide">
-                <div class="contract-kicker">Cómo leer esta sección</div>
+                <div class="contract-kicker">CÃ³mo leer esta secciÃ³n</div>
                 <h3>Decide mejor en menos tiempo.</h3>
                 <ul>
-                  <li><strong>1 · Empieza por tu prioridad</strong>¿Buscas renta fija, participación en ingresos, fee de gestión o una estructura personalizada?</li>
-                  <li><strong>2 · Mira el nivel de implicación</strong>Algunas fórmulas premian la autonomía del operador; otras favorecen una colaboración más compartida.</li>
-                  <li><strong>3 · Piensa en el horizonte</strong>La mejor estructura es la que hace sentir seguridad hoy y facilita crecimiento mañana.</li>
+                  <li><strong>1 Â· Empieza por tu prioridad</strong>Â¿Buscas renta fija, participaciÃ³n en ingresos, fee de gestiÃ³n o una estructura personalizada?</li>
+                  <li><strong>2 Â· Mira el nivel de implicaciÃ³n</strong>Algunas fÃ³rmulas premian la autonomÃ­a del operador; otras favorecen una colaboraciÃ³n mÃ¡s compartida.</li>
+                  <li><strong>3 Â· Piensa en el horizonte</strong>La mejor estructura es la que hace sentir seguridad hoy y facilita crecimiento maÃ±ana.</li>
                 </ul>
               </aside>
             </div>
@@ -1646,20 +1657,20 @@
                     <b>Modelo A</b>
                     <h3>Arrendamiento largo plazo</h3>
                   </div>
-                  <span class="contract-chip">Más directo</span>
+                  <span class="contract-chip">MÃ¡s directo</span>
                 </div>
-                <p class="contract-hook">Ideal si buscas simplicidad contractual y máxima autonomía operativa.</p>
+                <p class="contract-hook">Ideal si buscas simplicidad contractual y mÃ¡xima autonomÃ­a operativa.</p>
                 <div class="contract-meters">
-                  <div class="meter"><small>Autonomía operador</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>AutonomÃ­a operador</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
                   <div class="meter"><small>Incentivo compartido</small><div class="meter-bar level-1"><span></span><span></span><span></span><span></span></div></div>
-                  <div class="meter"><small>Personalización</small><div class="meter-bar level-2"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>PersonalizaciÃ³n</small><div class="meter-bar level-2"><span></span><span></span><span></span><span></span></div></div>
                 </div>
                 <ul class="contract-points">
-                  <li><strong>Encaje:</strong> operador consolidado que quiere controlar la explotación diaria.</li>
-                  <li><strong>Lógica:</strong> la propiedad entrega el activo terminado y recibe una renta fija a 10–20 años.</li>
-                  <li><strong>Beneficio:</strong> claridad de responsabilidades, previsibilidad y foco en operación.</li>
+                  <li><strong>Encaje:</strong> operador consolidado que quiere controlar la explotaciÃ³n diaria.</li>
+                  <li><strong>LÃ³gica:</strong> la propiedad entrega el activo terminado y recibe una renta fija a 10â20 aÃ±os.</li>
+                  <li><strong>Beneficio:</strong> claridad de responsabilidades, previsibilidad y foco en operaciÃ³n.</li>
                 </ul>
-                <div class="contract-note"><strong>Sensación clave:</strong> control y previsibilidad desde el primer día.</div>
+                <div class="contract-note"><strong>SensaciÃ³n clave:</strong> control y previsibilidad desde el primer dÃ­a.</div>
               </article>
 
               <article class="contract">
@@ -1672,60 +1683,60 @@
                 </div>
                 <p class="contract-hook">Ideal si quieres compartir upside sin perder una base de seguridad.</p>
                 <div class="contract-meters">
-                  <div class="meter"><small>Autonomía operador</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>AutonomÃ­a operador</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
                   <div class="meter"><small>Incentivo compartido</small><div class="meter-bar level-3"><span></span><span></span><span></span><span></span></div></div>
-                  <div class="meter"><small>Personalización</small><div class="meter-bar level-3"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>PersonalizaciÃ³n</small><div class="meter-bar level-3"><span></span><span></span><span></span><span></span></div></div>
                 </div>
                 <ul class="contract-points">
                   <li><strong>Encaje:</strong> operadores que quieren crecer con la propiedad, no solo alquilarle un activo.</li>
-                  <li><strong>Lógica:</strong> renta mínima garantizada más participación sobre ingresos.</li>
-                  <li><strong>Beneficio:</strong> alinea intereses y convierte el crecimiento comercial en un objetivo común.</li>
+                  <li><strong>LÃ³gica:</strong> renta mÃ­nima garantizada mÃ¡s participaciÃ³n sobre ingresos.</li>
+                  <li><strong>Beneficio:</strong> alinea intereses y convierte el crecimiento comercial en un objetivo comÃºn.</li>
                 </ul>
-                <div class="contract-note"><strong>Sensación clave:</strong> seguridad mínima + recompensa por rendimiento.</div>
+                <div class="contract-note"><strong>SensaciÃ³n clave:</strong> seguridad mÃ­nima + recompensa por rendimiento.</div>
               </article>
 
               <article class="contract">
                 <div class="contract-head">
                   <div>
                     <b>Modelo C</b>
-                    <h3>Contrato de gestión</h3>
+                    <h3>Contrato de gestiÃ³n</h3>
                   </div>
                   <span class="contract-chip">Know-how operativo</span>
                 </div>
-                <p class="contract-hook">Ideal si prefieres aportar gestión y marca sin asumir toda la exposición económica del activo.</p>
+                <p class="contract-hook">Ideal si prefieres aportar gestiÃ³n y marca sin asumir toda la exposiciÃ³n econÃ³mica del activo.</p>
                 <div class="contract-meters">
-                  <div class="meter"><small>Autonomía operador</small><div class="meter-bar level-2"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>AutonomÃ­a operador</small><div class="meter-bar level-2"><span></span><span></span><span></span><span></span></div></div>
                   <div class="meter"><small>Incentivo compartido</small><div class="meter-bar level-2"><span></span><span></span><span></span><span></span></div></div>
-                  <div class="meter"><small>Personalización</small><div class="meter-bar level-2"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>PersonalizaciÃ³n</small><div class="meter-bar level-2"><span></span><span></span><span></span><span></span></div></div>
                 </div>
                 <ul class="contract-points">
-                  <li><strong>Encaje:</strong> marcas y gestores con capacidad operativa, distribución y sistemas.</li>
-                  <li><strong>Lógica:</strong> la propiedad mantiene el riesgo económico y contrata al operador mediante honorarios fijos y/o variables.</li>
-                  <li><strong>Beneficio:</strong> entrada más ligera para el operador y aprovechamiento pleno de su know-how.</li>
+                  <li><strong>Encaje:</strong> marcas y gestores con capacidad operativa, distribuciÃ³n y sistemas.</li>
+                  <li><strong>LÃ³gica:</strong> la propiedad mantiene el riesgo econÃ³mico y contrata al operador mediante honorarios fijos y/o variables.</li>
+                  <li><strong>Beneficio:</strong> entrada mÃ¡s ligera para el operador y aprovechamiento pleno de su know-how.</li>
                 </ul>
-                <div class="contract-note"><strong>Sensación clave:</strong> expertise operativa con menor exposición económica.</div>
+                <div class="contract-note"><strong>SensaciÃ³n clave:</strong> expertise operativa con menor exposiciÃ³n econÃ³mica.</div>
               </article>
 
               <article class="contract">
                 <div class="contract-head">
                   <div>
                     <b>Modelo D</b>
-                    <h3>Acuerdo híbrido</h3>
+                    <h3>Acuerdo hÃ­brido</h3>
                   </div>
                   <span class="contract-chip">A medida</span>
                 </div>
-                <p class="contract-hook">Ideal si buscas una estructura evolutiva capaz de adaptarse a una relación de largo recorrido.</p>
+                <p class="contract-hook">Ideal si buscas una estructura evolutiva capaz de adaptarse a una relaciÃ³n de largo recorrido.</p>
                 <div class="contract-meters">
-                  <div class="meter"><small>Autonomía operador</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>AutonomÃ­a operador</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
                   <div class="meter"><small>Incentivo compartido</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
-                  <div class="meter"><small>Personalización</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
+                  <div class="meter"><small>PersonalizaciÃ³n</small><div class="meter-bar level-4"><span></span><span></span><span></span><span></span></div></div>
                 </div>
                 <ul class="contract-points">
-                  <li><strong>Encaje:</strong> operadores estratégicos con necesidades específicas o fases de entrada progresiva.</li>
-                  <li><strong>Lógica:</strong> combinación personalizada: gestión inicial + alquiler posterior, renta escalonada, variable o joint venture operativa.</li>
-                  <li><strong>Beneficio:</strong> máxima capacidad de adaptación y mejor alineación con escenarios reales de mercado.</li>
+                  <li><strong>Encaje:</strong> operadores estratÃ©gicos con necesidades especÃ­ficas o fases de entrada progresiva.</li>
+                  <li><strong>LÃ³gica:</strong> combinaciÃ³n personalizada: gestiÃ³n inicial + alquiler posterior, renta escalonada, variable o joint venture operativa.</li>
+                  <li><strong>Beneficio:</strong> mÃ¡xima capacidad de adaptaciÃ³n y mejor alineaciÃ³n con escenarios reales de mercado.</li>
                 </ul>
-                <div class="contract-note"><strong>Sensación clave:</strong> flexibilidad inteligente sin perder estructura.</div>
+                <div class="contract-note"><strong>SensaciÃ³n clave:</strong> flexibilidad inteligente sin perder estructura.</div>
               </article>
             </div>
           </div>
@@ -1734,20 +1745,20 @@
 
       <section id="es-process" class="section dark">
         <div class="wrap">
-          <div class="kicker">10 · Proceso para operadores</div>
+          <div class="kicker">10 Â· Proceso para operadores</div>
           <h2>Proceso para operadores</h2>
-          <p class="lead">Un proceso claro para cualificar el encaje, proteger la información sensible y avanzar hacia una estructura comercial viable.</p>
+          <p class="lead">Un proceso claro para cualificar el encaje, proteger la informaciÃ³n sensible y avanzar hacia una estructura comercial viable.</p>
           <div class="commercial-process-grid">
             <div class="commercial-step"><b>01</b><span>Solicitud de acceso</span></div>
             <div class="commercial-step"><b>02</b><span>Discovery call</span></div>
-            <div class="commercial-step"><b>03</b><span>Revisión de oportunidad</span></div>
+            <div class="commercial-step"><b>03</b><span>RevisiÃ³n de oportunidad</span></div>
             <div class="commercial-step"><b>04</b><span>NDA y Data Room</span></div>
             <div class="commercial-step"><b>05</b><span>Workshop built-to-suit</span></div>
             <div class="commercial-step"><b>06</b><span>Propuesta comercial</span></div>
             <div class="commercial-step"><b>07</b><span>LOI / MOU</span></div>
           </div>
           <div class="mid-cta">
-            <p>Solicita acceso para revisar documentación base, ubicación, activo y posibles estructuras de colaboración.</p>
+            <p>Solicita acceso para revisar documentaciÃ³n base, ubicaciÃ³n, activo y posibles estructuras de colaboraciÃ³n.</p>
             <div class="button-row"><a class="button primary" href="/ophao-subra/access">Solicitar acceso al Data Room</a><a class="button secondary" href="/ophao-subra/book-call">Agendar discovery call</a></div>
           </div>
         </div>
@@ -1757,10 +1768,10 @@
         <div class="wrap">
           <div class="story-header">
             <div>
-              <div class="kicker">11 · Espacios operables</div>
-              <h2>Una narrativa de espacios, no una galería de renders.</h2>
+              <div class="kicker">11 Â· Espacios operables</div>
+              <h2>Una narrativa de espacios, no una galerÃ­a de renders.</h2>
             </div>
-            <p class="lead">Llegada, refugio, comunidad, productividad, programación, aventura y territorio. Cada espacio ayuda al operador a imaginar un formato de explotación real.</p>
+            <p class="lead">Llegada, refugio, comunidad, productividad, programaciÃ³n, aventura y territorio. Cada espacio ayuda al operador a imaginar un formato de explotaciÃ³n real.</p>
           </div>
           <div class="story-grid">
             
@@ -1768,7 +1779,7 @@
         <img src="assets/images/facade-arrival.webp" alt="Llegada">
         <figcaption>
           <strong data-es="Llegada" data-en="Arrival">Llegada</strong>
-          <span data-es="Identidad, escala local y primera impresión boutique." data-en="Identity, local scale and boutique first impression.">Identidad, escala local y primera impresión boutique.</span>
+          <span data-es="Identidad, escala local y primera impresiÃ³n boutique." data-en="Identity, local scale and boutique first impression.">Identidad, escala local y primera impresiÃ³n boutique.</span>
         </figcaption>
       </figure>
     
@@ -1777,7 +1788,7 @@
         <img src="assets/images/private-room.webp" alt="Refugio">
         <figcaption>
           <strong data-es="Refugio" data-en="Refuge">Refugio</strong>
-          <span data-es="Habitación privada preparada para confort y estancia media." data-en="Private room designed for comfort and medium stays.">Habitación privada preparada para confort y estancia media.</span>
+          <span data-es="HabitaciÃ³n privada preparada para confort y estancia media." data-en="Private room designed for comfort and medium stays.">HabitaciÃ³n privada preparada para confort y estancia media.</span>
         </figcaption>
       </figure>
     
@@ -1786,7 +1797,7 @@
         <img src="assets/images/lounge.webp" alt="Comunidad">
         <figcaption>
           <strong data-es="Comunidad" data-en="Community">Comunidad</strong>
-          <span data-es="Espacios compartidos donde la hospitalidad se convierte en relación." data-en="Shared spaces where hospitality becomes connection.">Espacios compartidos donde la hospitalidad se convierte en relación.</span>
+          <span data-es="Espacios compartidos donde la hospitalidad se convierte en relaciÃ³n." data-en="Shared spaces where hospitality becomes connection.">Espacios compartidos donde la hospitalidad se convierte en relaciÃ³n.</span>
         </figcaption>
       </figure>
     
@@ -1801,9 +1812,9 @@
     
             
       <figure class="story-card">
-        <img src="assets/images/multipurpose-room.webp" alt="Programación">
+        <img src="assets/images/multipurpose-room.webp" alt="ProgramaciÃ³n">
         <figcaption>
-          <strong data-es="Programación" data-en="Programming">Programación</strong>
+          <strong data-es="ProgramaciÃ³n" data-en="Programming">ProgramaciÃ³n</strong>
           <span data-es="Sala flexible para reuniones, retreats, workshops y briefings." data-en="Flexible room for meetings, retreats, workshops and briefings.">Sala flexible para reuniones, retreats, workshops y briefings.</span>
         </figcaption>
       </figure>
@@ -1813,7 +1824,7 @@
         <img src="assets/images/adventure-hub.webp" alt="Aventura">
         <figcaption>
           <strong data-es="Aventura" data-en="Adventure">Aventura</strong>
-          <span data-es="Infraestructura adventure como ventaja diferencial, no como eje único." data-en="Adventure infrastructure as a differentiating amenity, not the only focus.">Infraestructura adventure como ventaja diferencial, no como eje único.</span>
+          <span data-es="Infraestructura adventure como ventaja diferencial, no como eje Ãºnico." data-en="Adventure infrastructure as a differentiating amenity, not the only focus.">Infraestructura adventure como ventaja diferencial, no como eje Ãºnico.</span>
         </figcaption>
       </figure>
     
@@ -1822,13 +1833,13 @@
         <img src="assets/images/courtyard-pool.webp" alt="Vida compartida">
         <figcaption>
           <strong data-es="Vida compartida" data-en="Shared living">Vida compartida</strong>
-          <span data-es="Patio y piscina como corazón experiencial del activo." data-en="Courtyard and pool as the experiential heart of the asset.">Patio y piscina como corazón experiencial del activo.</span>
+          <span data-es="Patio y piscina como corazÃ³n experiencial del activo." data-en="Courtyard and pool as the experiential heart of the asset.">Patio y piscina como corazÃ³n experiencial del activo.</span>
         </figcaption>
       </figure>
     
             
       <figure class="story-card">
-        <img src="assets/images/location-malaga-marbella.webp" alt="Territorio ampliado con Málaga, Marbella, El Burgo y Ronda">
+        <img src="assets/images/location-malaga-marbella.webp" alt="Territorio ampliado con MÃ¡laga, Marbella, El Burgo y Ronda">
         <figcaption>
           <strong data-es="Territorio" data-en="Territory">Territorio</strong>
           <span data-es="El activo integrado en El Burgo, Sierra de las Nieves y el eje de Ronda." data-en="The asset integrated into El Burgo, Sierra de las Nieves and the Ronda axis.">El activo integrado en El Burgo, Sierra de las Nieves y el eje de Ronda.</span>
@@ -1841,26 +1852,26 @@
 
       <section class="section bone">
         <div class="wrap">
-          <div class="kicker">12 · Apéndice</div>
+          <div class="kicker">12 Â· ApÃ©ndice</div>
           <h2>Fuentes utilizadas en la narrativa para operadores.</h2>
           <ol class="source-list">
-            <li>Aena — datos de pasajeros del Aeropuerto de Málaga-Costa del Sol.</li>
-            <li>Junta de Andalucía — datos turísticos anuales de Andalucía.</li>
-            <li>MITECO — ficha técnica del Parque Nacional Sierra de las Nieves.</li>
-            <li>Andalucía.org — rutas en moto Serranía de Ronda / Valle del Genal.</li>
-            <li>Eurostat — indicadores de trabajo desde casa en la UE.</li>
-            <li>OECD — análisis sobre teletrabajo e hibridación laboral.</li>
-            <li>JLL — informes sobre living, flex living y alojamiento profesionalizado.</li>
-            <li>Savills — análisis de coliving y living en España.</li>
+            <li>Aena â datos de pasajeros del Aeropuerto de MÃ¡laga-Costa del Sol.</li>
+            <li>Junta de AndalucÃ­a â datos turÃ­sticos anuales de AndalucÃ­a.</li>
+            <li>MITECO â ficha tÃ©cnica del Parque Nacional Sierra de las Nieves.</li>
+            <li>AndalucÃ­a.org â rutas en moto SerranÃ­a de Ronda / Valle del Genal.</li>
+            <li>Eurostat â indicadores de trabajo desde casa en la UE.</li>
+            <li>OECD â anÃ¡lisis sobre teletrabajo e hibridaciÃ³n laboral.</li>
+            <li>JLL â informes sobre living, flex living y alojamiento profesionalizado.</li>
+            <li>Savills â anÃ¡lisis de coliving y living en EspaÃ±a.</li>
           </ol>
         </div>
       </section>
 
       <section id="es-contact" class="final-cta">
         <div class="wrap">
-          <div class="kicker">Próximo paso</div>
-          <h2>¿Quieres evaluar el encaje de OPHAO SUBRA con tu modelo operativo?</h2>
-          <p>Solicita acceso al Data Room o agenda una discovery call para revisar el activo, el destino y las posibles estructuras de colaboración.</p>
+          <div class="kicker">PrÃ³ximo paso</div>
+          <h2>Â¿Quieres evaluar el encaje de OPHAO SUBRA con tu modelo operativo?</h2>
+          <p>Solicita acceso al Data Room o agenda una discovery call para revisar el activo, el destino y las posibles estructuras de colaboraciÃ³n.</p>
           <div class="button-row" style="justify-content:center;">
             <a class="button primary" href="/ophao-subra/access">Solicitar acceso al Data Room</a>
             <a class="button secondary" href="/ophao-subra/book-call">Agendar discovery call</a>
@@ -1874,9 +1885,9 @@
         <div class="hero-media"><img src="assets/images/facade-arrival.webp" alt="OPHAO SUBRA main facade in El Burgo"></div>
         <div class="hero-content">
           <div>
-            <div class="kicker">Hospitality opportunity · Built-to-suit · El Burgo, Málaga</div>
+            <div class="kicker">Hospitality opportunity Â· Built-to-suit Â· El Burgo, MÃ¡laga</div>
             <h1>OPHAO SUBRA: a built-to-suit hospitality opportunity in Sierra de las Nieves</h1>
-            <p>A unique asset in El Burgo, Málaga, with up to 20 target keys and a final configuration to be shaped with the selected operator.</p>
+            <p>A unique asset in El Burgo, MÃ¡laga, with up to 20 target keys and a final configuration to be shaped with the selected operator.</p>
             <div class="button-row">
               <a class="button primary" href="/ophao-subra/access">Request Data Room Access</a>
               <a class="button secondary" href="/ophao-subra/book-call">Book a Discovery Call</a>
@@ -1886,7 +1897,7 @@
             <p>OPHAO SUBRA is positioned as a strategic rehabilitation for professional operators in premium rural hospitality, flexible living, retreats and workation.</p>
             <div class="mini-grid">
               <div class="mini-stat"><b>Up to 20</b><span>target commercial keys</span></div>
-              <div class="mini-stat"><b>C/ Mesones 7</b><span>El Burgo, Málaga</span></div>
+              <div class="mini-stat"><b>C/ Mesones 7</b><span>El Burgo, MÃ¡laga</span></div>
               <div class="mini-stat"><b>472 / 488 sqm</b><span>plot / cadastral built area</span></div>
               <div class="mini-stat"><b>Pre-design</b><span>built-to-suit with operator</span></div>
             </div>
@@ -1896,12 +1907,12 @@
 
       <section id="en-asset-facts" class="section bone">
         <div class="wrap">
-          <div class="kicker">00 · Asset Facts</div>
+          <div class="kicker">00 Â· Asset Facts</div>
           <h2>Asset Facts</h2>
           <p class="lead">Core information for operators and managers to assess initial fit before requesting access to the Data Room.</p>
           <div class="asset-facts-grid">
             <div class="asset-fact"><span>Asset</span><b>OPHAO SUBRA</b></div>
-            <div class="asset-fact"><span>Location</span><b>Calle Mesones 7, El Burgo, Málaga</b></div>
+            <div class="asset-fact"><span>Location</span><b>Calle Mesones 7, El Burgo, MÃ¡laga</b></div>
             <div class="asset-fact"><span>Plot size</span><b>472 sqm</b></div>
             <div class="asset-fact"><span>Built area</span><b>488 sqm</b></div>
             <div class="asset-fact"><span>Year built</span><b>1945</b></div>
@@ -1916,7 +1927,7 @@
       <section id="en-vision" class="section pine">
         <div class="wrap split wide-left">
           <div>
-            <div class="kicker">01 · For operators, not investors</div>
+            <div class="kicker">01 Â· For operators, not investors</div>
             <h2>We are not selling rooms. We are designing an operating platform.</h2>
             <p class="lead">ECOCERTER GROUP promotes, builds and delivers the asset. The operator helps shape the product, adapts it to its model and operates the business under a professional commercial structure.</p>
             <div class="cards">
@@ -1932,7 +1943,7 @@
       <section id="en-target-operators" class="section dark-soft">
         <div class="wrap operator-layout">
           <div>
-            <div class="kicker">02 · Target operators</div>
+            <div class="kicker">02 Â· Target operators</div>
             <h2>Target Operators</h2>
             <p class="lead">We are looking for operators capable of turning a unique asset into a differentiated hospitality concept, with destination sensitivity, operational vision and demand-generation capacity.</p>
             <div class="button-row">
@@ -1940,15 +1951,7 @@
               <a class="button secondary" href="/ophao-subra/book-call">Book a Discovery Call</a>
             </div>
           </div>
-          <div class="operator-list">
-            <div class="operator-pill">Boutique hotel operators</div>
-            <div class="operator-pill">Flexible accommodation managers</div>
-            <div class="operator-pill">Retreat and workation operators</div>
-            <div class="operator-pill">Premium rural hospitality brands</div>
-            <div class="operator-pill">Real estate managers with hospitality capabilities</div>
-            <div class="operator-pill">Operators with an existing community</div>
-            <div class="operator-pill">Platforms interested in lease, management, revenue share or joint venture models</div>
-          </div>
+          <div class="operator-list"><div class="operator-card"><span class="operator-glyph">BH</span><div class="operator-card-body"><strong class="operator-name">Boutique hotel operators</strong><span class="operator-desc">Design-led brands with signature service.</span></div></div><div class="operator-card"><span class="operator-glyph">AF</span><div class="operator-card-body"><strong class="operator-name">Flexible-stay managers</strong><span class="operator-desc">Hybrid stays: short, mid and long term.</span></div></div><div class="operator-card"><span class="operator-glyph">RW</span><div class="operator-card-body"><strong class="operator-name">Retreats & workation</strong><span class="operator-desc">Cohort programming and purpose-driven stays.</span></div></div><div class="operator-card"><span class="operator-glyph">RP</span><div class="operator-card-body"><strong class="operator-name">Premium rural hospitality</strong><span class="operator-desc">Andalusian authenticity, international standard.</span></div></div><div class="operator-card"><span class="operator-glyph">GO</span><div class="operator-card-body"><strong class="operator-name">Operationally capable managers</strong><span class="operator-desc">Real estate with true operating muscle.</span></div></div><div class="operator-card"><span class="operator-glyph">CP</span><div class="operator-card-body"><strong class="operator-name">Own-community brands</strong><span class="operator-desc">Loyal audience that fills calendar and occupancy.</span></div></div><div class="operator-card"><span class="operator-glyph">JV</span><div class="operator-card-body"><strong class="operator-name">Platforms & JV</strong><span class="operator-desc">Lease, management, revenue share or joint venture.</span></div></div></div>
         </div>
       </section>
 
@@ -1956,7 +1959,7 @@
         <div class="wrap split wide-right">
           <div class="image-shell"><img src="assets/images/courtyard-pool.webp" alt="Boutique courtyard with pool"></div>
           <div>
-            <div class="kicker">03 · What we build</div>
+            <div class="kicker">03 Â· What we build</div>
             <h2>An asset built to host, work, gather and operate.</h2>
             <p>The preliminary program is adaptable, with a 16-private-room base and potential expansion up to 20 commercial keys, subject to technical definition and final program.</p>
             <p>The goal is not to impose a closed product, but to develop an asset adaptable to flexible living, workation, retreat, wellness, experiential hospitality and active travel operators.</p>
@@ -1964,7 +1967,7 @@
               <div class="fact"><b>16</b><span>Private rooms</span></div>
               <div class="fact"><b>1</b><span>Real coworking</span></div>
               <div class="fact"><b>1</b><span>Courtyard / pool</span></div>
-              <div class="fact"><b>∞</b><span>Operating formats</span></div>
+              <div class="fact"><b>â</b><span>Operating formats</span></div>
             </div>
           </div>
         </div>
@@ -1973,7 +1976,7 @@
       <section class="section pine territory-section">
         <div class="wrap territory-layout">
           <div class="territory-copy">
-            <div class="kicker">04 · Sierra de las Nieves</div>
+            <div class="kicker">04 Â· Sierra de las Nieves</div>
             <h2>Sierra de las Nieves + Ronda: a territory with a name of its own.</h2>
             <p class="lead">OPHAO SUBRA leverages its location in El Burgo, within the protected Sierra de las Nieves ecosystem and naturally connected to Ronda's international image. For an operator, this is not just landscape: it is narrative, recognition, differentiation, outdoor programming, retreat value and a real alternative to urban or coastal accommodation.</p>
             <p>The proposition supports a hospitality product connected to mountains, hiking, motorcycle tourism, retreats, remote work, international community and Ronda-oriented excursions, while preserving the authenticity of an Andalusian village.</p>
@@ -1981,7 +1984,7 @@
           <figure class="location-study territory-proof territory-hero-map">
             <img src="assets/images/el-burgo-paisaje.webp" alt="Location map of OPHAO SUBRA in El Burgo: 25 min to Caminito del Rey, 35 min to Ronda, 40 min to Marbella and 50 min to Malaga" loading="lazy">
             <figcaption>
-              <div class="microdata">Territory positioning study</div>
+              <div class="microdata territory-tag">Territory positioning study</div>
               <p><strong>An asset inside the village. A platform inside the territory.</strong><br>El Burgo brings authenticity, Sierra de las Nieves brings protected nature and Ronda brings international recognition.</p>
             </figcaption>
           </figure>
@@ -2008,7 +2011,7 @@
       </section>
       <section id="en-market" class="section dark">
         <div class="wrap">
-          <div class="kicker">05 · Market evidence</div>
+          <div class="kicker">05 Â· Market evidence</div>
           <h2>Arguments operators can underwrite.</h2>
           <p class="lead">The asset is positioned at the intersection of several demand drivers: international access, Andalusia's tourism strength, protected natural territory, remote-work behaviour, flexible living growth and active-travel demand.</p>
 
@@ -2066,7 +2069,7 @@
         <div class="wrap split reverse">
           <div class="image-shell"><img src="assets/images/private-room.webp" alt="OPHAO SUBRA private room"></div>
           <div>
-            <div class="kicker">06 · Capacity</div>
+            <div class="kicker">06 Â· Capacity</div>
             <h2>Up to 20 target keys. Multiple operating formats.</h2>
             <p>The preliminary accommodation program allows the operator to combine individual stays, full-asset buyouts and curated group programs. The room should support comfort, privacy, storage, work support and medium-stay functionality.</p>
             <div class="cards">
@@ -2081,7 +2084,7 @@
       <section id="en-flex" class="section mauve">
         <div class="wrap split wide-left">
           <div>
-            <div class="kicker">07 · Built-to-suit flexibility</div>
+            <div class="kicker">07 Â· Built-to-suit flexibility</div>
             <h2>The operator enters before the design is locked.</h2>
             <p class="lead">OPHAO SUBRA can be adjusted to the selected operator's requirements before final technical design: layout, shared spaces, FF&E, branding, technology, access, F&B program and adventure infrastructure.</p>
             <div class="system-grid">
@@ -2106,7 +2109,7 @@
             <img src="assets/images/coworking.webp" alt="OPHAO SUBRA professional coworking">
           </div>
           <div>
-            <div class="kicker">08 · Demand stack</div>
+            <div class="kicker">08 Â· Demand stack</div>
             <h2>Nature, remote work, community and adventure in one asset.</h2>
             <p>The commercial thesis does not depend on one segment. OPHAO SUBRA allows the operator to activate compatible layers of demand: remote workers, digital nomads, corporate teams, retreat organizers, active travel, international motorcycle tourism and Ronda-oriented short excursions.</p>
             <p>Each layer relies on the same operating spaces, so occupancy holds throughout the year without depending on a single customer profile.</p>
@@ -2141,7 +2144,7 @@
 
       <section id="en-contracts" class="section bone">
         <div class="wrap">
-          <div class="kicker">09 · Commercial structures</div>
+          <div class="kicker">09 Â· Commercial structures</div>
           <h2>Flexible commercial structures depending on operator and phase.</h2>
           <p class="lead">We are open to different structures, provided there is strategic alignment between the asset, the operator and the destination. The priority is to balance real estate security, operational feasibility and upside potential.</p>
 
@@ -2152,9 +2155,9 @@
                 <div class="contract-kicker">How to read this section</div>
                 <h3>Make the decision faster.</h3>
                 <ul>
-                  <li><strong>1 · Start with your priority</strong>Are you looking for fixed rent, revenue participation, a management fee or a customized structure?</li>
-                  <li><strong>2 · Check the involvement level</strong>Some formulas reward operator autonomy; others create a more shared collaboration.</li>
-                  <li><strong>3 · Think about the horizon</strong>The best structure is the one that creates confidence today and makes growth easier tomorrow.</li>
+                  <li><strong>1 Â· Start with your priority</strong>Are you looking for fixed rent, revenue participation, a management fee or a customized structure?</li>
+                  <li><strong>2 Â· Check the involvement level</strong>Some formulas reward operator autonomy; others create a more shared collaboration.</li>
+                  <li><strong>3 Â· Think about the horizon</strong>The best structure is the one that creates confidence today and makes growth easier tomorrow.</li>
                 </ul>
               </aside>
             </div>
@@ -2177,7 +2180,7 @@
                 </div>
                 <ul class="contract-points">
                   <li><strong>Fit:</strong> established operator seeking full control over daily operations.</li>
-                  <li><strong>Logic:</strong> the property delivers the completed asset and receives fixed rent over 10–20 years.</li>
+                  <li><strong>Logic:</strong> the property delivers the completed asset and receives fixed rent over 10â20 years.</li>
                   <li><strong>Benefit:</strong> clear responsibilities, predictability and operational focus.</li>
                 </ul>
                 <div class="contract-note"><strong>Key feeling:</strong> control and predictability from day one.</div>
@@ -2255,7 +2258,7 @@
 
       <section id="en-process" class="section dark">
         <div class="wrap">
-          <div class="kicker">10 · Operator process</div>
+          <div class="kicker">10 Â· Operator process</div>
           <h2>Operator Process</h2>
           <p class="lead">A clear process to qualify fit, protect sensitive information and move towards a viable commercial structure.</p>
           <div class="commercial-process-grid">
@@ -2278,7 +2281,7 @@
         <div class="wrap">
           <div class="story-header">
             <div>
-              <div class="kicker">11 · Operable spaces</div>
+              <div class="kicker">11 Â· Operable spaces</div>
               <h2>A narrative of spaces, not a render gallery.</h2>
             </div>
             <p class="lead">Arrival, refuge, community, productivity, programming, adventure and territory. Each space helps the operator imagine a real operating format.</p>
@@ -2289,7 +2292,7 @@
         <img src="assets/images/facade-arrival.webp" alt="Llegada">
         <figcaption>
           <strong data-es="Llegada" data-en="Arrival">Llegada</strong>
-          <span data-es="Identidad, escala local y primera impresión boutique." data-en="Identity, local scale and boutique first impression.">Identidad, escala local y primera impresión boutique.</span>
+          <span data-es="Identidad, escala local y primera impresiÃ³n boutique." data-en="Identity, local scale and boutique first impression.">Identidad, escala local y primera impresiÃ³n boutique.</span>
         </figcaption>
       </figure>
     
@@ -2298,7 +2301,7 @@
         <img src="assets/images/private-room.webp" alt="Refugio">
         <figcaption>
           <strong data-es="Refugio" data-en="Refuge">Refugio</strong>
-          <span data-es="Habitación privada preparada para confort y estancia media." data-en="Private room designed for comfort and medium stays.">Habitación privada preparada para confort y estancia media.</span>
+          <span data-es="HabitaciÃ³n privada preparada para confort y estancia media." data-en="Private room designed for comfort and medium stays.">HabitaciÃ³n privada preparada para confort y estancia media.</span>
         </figcaption>
       </figure>
     
@@ -2307,7 +2310,7 @@
         <img src="assets/images/lounge.webp" alt="Comunidad">
         <figcaption>
           <strong data-es="Comunidad" data-en="Community">Comunidad</strong>
-          <span data-es="Espacios compartidos donde la hospitalidad se convierte en relación." data-en="Shared spaces where hospitality becomes connection.">Espacios compartidos donde la hospitalidad se convierte en relación.</span>
+          <span data-es="Espacios compartidos donde la hospitalidad se convierte en relaciÃ³n." data-en="Shared spaces where hospitality becomes connection.">Espacios compartidos donde la hospitalidad se convierte en relaciÃ³n.</span>
         </figcaption>
       </figure>
     
@@ -2322,9 +2325,9 @@
     
             
       <figure class="story-card">
-        <img src="assets/images/multipurpose-room.webp" alt="Programación">
+        <img src="assets/images/multipurpose-room.webp" alt="ProgramaciÃ³n">
         <figcaption>
-          <strong data-es="Programación" data-en="Programming">Programación</strong>
+          <strong data-es="ProgramaciÃ³n" data-en="Programming">ProgramaciÃ³n</strong>
           <span data-es="Sala flexible para reuniones, retreats, workshops y briefings." data-en="Flexible room for meetings, retreats, workshops and briefings.">Sala flexible para reuniones, retreats, workshops y briefings.</span>
         </figcaption>
       </figure>
@@ -2334,7 +2337,7 @@
         <img src="assets/images/adventure-hub.webp" alt="Aventura">
         <figcaption>
           <strong data-es="Aventura" data-en="Adventure">Aventura</strong>
-          <span data-es="Infraestructura adventure como ventaja diferencial, no como eje único." data-en="Adventure infrastructure as a differentiating amenity, not the only focus.">Infraestructura adventure como ventaja diferencial, no como eje único.</span>
+          <span data-es="Infraestructura adventure como ventaja diferencial, no como eje Ãºnico." data-en="Adventure infrastructure as a differentiating amenity, not the only focus.">Infraestructura adventure como ventaja diferencial, no como eje Ãºnico.</span>
         </figcaption>
       </figure>
     
@@ -2343,13 +2346,13 @@
         <img src="assets/images/courtyard-pool.webp" alt="Vida compartida">
         <figcaption>
           <strong data-es="Vida compartida" data-en="Shared living">Vida compartida</strong>
-          <span data-es="Patio y piscina como corazón experiencial del activo." data-en="Courtyard and pool as the experiential heart of the asset.">Patio y piscina como corazón experiencial del activo.</span>
+          <span data-es="Patio y piscina como corazÃ³n experiencial del activo." data-en="Courtyard and pool as the experiential heart of the asset.">Patio y piscina como corazÃ³n experiencial del activo.</span>
         </figcaption>
       </figure>
     
             
       <figure class="story-card">
-        <img src="assets/images/location-malaga-marbella.webp" alt="Expanded territory view with Málaga, Marbella, El Burgo and Ronda">
+        <img src="assets/images/location-malaga-marbella.webp" alt="Expanded territory view with MÃ¡laga, Marbella, El Burgo and Ronda">
         <figcaption>
           <strong data-es="Territorio" data-en="Territory">Territorio</strong>
           <span data-es="El activo integrado en El Burgo, Sierra de las Nieves y el eje de Ronda." data-en="The asset integrated into El Burgo, Sierra de las Nieves and the Ronda axis.">El activo integrado en El Burgo, Sierra de las Nieves y el eje de Ronda.</span>
@@ -2362,17 +2365,17 @@
 
       <section class="section bone">
         <div class="wrap">
-          <div class="kicker">12 · Appendix</div>
+          <div class="kicker">12 Â· Appendix</div>
           <h2>Sources used in the operator-facing narrative.</h2>
           <ol class="source-list">
-            <li>Aena — passenger data for Malaga-Costa del Sol Airport.</li>
-            <li>Junta de Andalucía — annual tourism data for Andalusia.</li>
-            <li>MITECO — Sierra de las Nieves National Park technical sheet.</li>
-            <li>Andalucía.org — motorcycle route in Serranía de Ronda / Valle del Genal.</li>
-            <li>Eurostat — work-from-home indicators in the EU.</li>
-            <li>OECD — analysis on remote and hybrid work.</li>
-            <li>JLL — reports on living, flex living and professional accommodation.</li>
-            <li>Savills — analysis of coliving and living in Spain.</li>
+            <li>Aena â passenger data for Malaga-Costa del Sol Airport.</li>
+            <li>Junta de AndalucÃ­a â annual tourism data for Andalusia.</li>
+            <li>MITECO â Sierra de las Nieves National Park technical sheet.</li>
+            <li>AndalucÃ­a.org â motorcycle route in SerranÃ­a de Ronda / Valle del Genal.</li>
+            <li>Eurostat â work-from-home indicators in the EU.</li>
+            <li>OECD â analysis on remote and hybrid work.</li>
+            <li>JLL â reports on living, flex living and professional accommodation.</li>
+            <li>Savills â analysis of coliving and living in Spain.</li>
           </ol>
         </div>
       </section>
@@ -2380,7 +2383,7 @@
       <section id="en-contact" class="final-cta">
         <div class="wrap">
           <div class="kicker">Next step</div>
-          <h2>Would you like to assess OPHAO SUBRA’s fit with your operating model?</h2>
+          <h2>Would you like to assess OPHAO SUBRAâs fit with your operating model?</h2>
           <p>Request access to the Data Room or book a discovery call to review the asset, the destination and potential collaboration structures.</p>
           <div class="button-row" style="justify-content:center;">
             <a class="button primary" href="/ophao-subra/access">Request Data Room Access</a>
@@ -2397,7 +2400,7 @@
         brand: '#es-top',
         cta: 'Solicitar acceso',
         nav: [
-          ['vision', 'Visión', '#es-vision'],
+          ['vision', 'VisiÃ³n', '#es-vision'],
           ['market', 'Mercado', '#es-market'],
           ['flex', 'Flexibilidad', '#es-flex'],
           ['contract', 'Contratos', '#es-contracts'],
@@ -2496,7 +2499,7 @@
         if (next) next.addEventListener('click', () => goTo(index + 1));
         dots.forEach((dot, n) => dot.addEventListener('click', () => goTo(n)));
 
-        // Avance automático: una diapositiva distinta cada 5 segundos.
+        // Avance automÃ¡tico: una diapositiva distinta cada 5 segundos.
         show(0);
         startAutoplay();
       });
