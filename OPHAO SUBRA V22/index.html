@@ -1356,6 +1356,53 @@
       .process-timeline { grid-template-columns: 1fr 1fr; column-gap: 44px; }
       .process-timeline::before { display: none; }
     }
+
+    /* v25 section 04 positioning panel redesign */
+    .territory-hero-map.location-study figcaption { margin-top: 0; }
+    .tpos-panel {
+      max-width: 1120px;
+      margin: -34px auto 0;
+      position: relative;
+      z-index: 2;
+      padding: 34px 38px 32px;
+      border: 1px solid rgba(201,161,90,.30);
+      border-radius: 18px;
+      background: linear-gradient(150deg, rgba(28,34,30,.94) 0%, rgba(34,44,38,.90) 55%, rgba(40,34,26,.90) 100%);
+      box-shadow: 0 26px 60px -28px rgba(0,0,0,.72), inset 0 1px 0 rgba(255,255,255,.04);
+      backdrop-filter: blur(6px);
+    }
+    .tpos-panel::before {
+      content: ""; position: absolute; left: 0; top: 20px; bottom: 20px; width: 3px;
+      border-radius: 3px; background: linear-gradient(180deg, var(--fluor), rgba(169,111,76,.55));
+    }
+    .tpos-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 12px; letter-spacing: .22em; text-transform: uppercase; font-weight: 700;
+      color: var(--fluor); margin: 0 0 16px;
+    }
+    .tpos-rule { display: inline-block; width: 30px; height: 2px; border-radius: 2px; background: var(--fluor); opacity: .9; }
+    .tpos-headline {
+      margin: 0 0 12px; max-width: 900px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.32rem, 2.1vw, 1.72rem); line-height: 1.32; font-weight: 600; color: #fff;
+    }
+    .tpos-sub {
+      margin: 0 0 22px; max-width: 900px;
+      font-size: 15.5px; line-height: 1.68; color: rgba(242,234,223,.80);
+    }
+    .tpos-chips { display: flex; flex-wrap: wrap; gap: 12px; }
+    .tpos-chip {
+      display: flex; flex-direction: column; gap: 3px;
+      flex: 1 1 200px; min-width: 180px;
+      padding: 13px 16px; border-radius: 12px;
+      background: rgba(242,234,223,.05); border: 1px solid rgba(169,111,76,.32);
+    }
+    .tpos-chip-place { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--fluor); font-weight: 700; }
+    .tpos-chip-val { font-size: 14.5px; line-height: 1.4; color: rgba(242,234,223,.92); }
+    @media (max-width: 900px) {
+      .tpos-panel { margin-top: -20px; padding: 26px 22px 24px; }
+      .tpos-chip { flex: 1 1 100%; }
+    }
 </style>
 </head>
 <body>
@@ -1483,10 +1530,7 @@
           </div>
           <figure class="location-study territory-proof territory-hero-map">
             <img src="assets/images/el-burgo-paisaje.webp" alt="Mapa de ubicacion de OPHAO SUBRA en El Burgo: 25 min al Caminito del Rey, 35 min a Ronda, 40 min a Marbella y 50 min a Malaga" loading="lazy">
-            <figcaption>
-              <div class="microdata territory-tag">Territory positioning study</div>
-              <p><strong>Un activo dentro del pueblo. Una plataforma dentro del territorio.</strong><br>El Burgo aporta autenticidad, Sierra de las Nieves aporta naturaleza protegida y Ronda aporta reconocimiento internacional.</p>
-            </figcaption>
+            <figcaption><div class="tpos-panel"><div class="tpos-eyebrow"><span class="tpos-rule"></span>El territorio como activo</div><p class="tpos-headline">Un activo dentro del pueblo. Una plataforma dentro del territorio.</p><p class="tpos-sub">El Burgo aporta autenticidad, Sierra de las Nieves aporta naturaleza protegida y Ronda aporta reconocimiento internacional.</p><div class="tpos-chips"><span class="tpos-chip"><span class="tpos-chip-place">El Burgo</span><span class="tpos-chip-val">Autenticidad</span></span><span class="tpos-chip"><span class="tpos-chip-place">Sierra de las Nieves</span><span class="tpos-chip-val">Naturaleza protegida</span></span><span class="tpos-chip"><span class="tpos-chip-place">Ronda</span><span class="tpos-chip-val">Reconocimiento internacional</span></span></div></div></figcaption>
           </figure>
           <div class="cards location-cards territory-cards">
             <div class="card"><div class="num">Paisaje protegido</div><p>Sierra de las Nieves aporta naturaleza protegida; Ronda aporta notoriedad internacional, cultura, rutas esc&#233;nicas y un imaginario tur&#237;stico ya consolidado.</p></div>
@@ -1988,10 +2032,7 @@
           </div>
           <figure class="location-study territory-proof territory-hero-map">
             <img src="assets/images/el-burgo-paisaje.webp" alt="Location map of OPHAO SUBRA in El Burgo: 25 min to Caminito del Rey, 35 min to Ronda, 40 min to Marbella and 50 min to Malaga" loading="lazy">
-            <figcaption>
-              <div class="microdata territory-tag">Territory positioning study</div>
-              <p><strong>An asset inside the village. A platform inside the territory.</strong><br>El Burgo brings authenticity, Sierra de las Nieves brings protected nature and Ronda brings international recognition.</p>
-            </figcaption>
+            <figcaption><div class="tpos-panel"><div class="tpos-eyebrow"><span class="tpos-rule"></span>The territory as an asset</div><p class="tpos-headline">An asset inside the village. A platform inside the territory.</p><p class="tpos-sub">El Burgo brings authenticity, Sierra de las Nieves brings protected nature, and Ronda brings international recognition.</p><div class="tpos-chips"><span class="tpos-chip"><span class="tpos-chip-place">El Burgo</span><span class="tpos-chip-val">Authenticity</span></span><span class="tpos-chip"><span class="tpos-chip-place">Sierra de las Nieves</span><span class="tpos-chip-val">Protected nature</span></span><span class="tpos-chip"><span class="tpos-chip-place">Ronda</span><span class="tpos-chip-val">International recognition</span></span></div></div></figcaption>
           </figure>
           <div class="cards location-cards territory-cards">
             <div class="card"><div class="num">Protected landscape</div><p>Sierra de las Nieves provides protected nature; Ronda adds international recognition, culture, scenic routes and a consolidated tourism imagination.</p></div>
