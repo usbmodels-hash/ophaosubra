@@ -1403,6 +1403,58 @@
       .tpos-panel { margin-top: -20px; padding: 26px 22px 24px; }
       .tpos-chip { flex: 1 1 100%; }
     }
+
+    /* v26 section 07 modular system cards (option A) */
+    .system-grid.sys-modules {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .sys-mod {
+      position: relative;
+      display: flex; flex-direction: column;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(232,222,208,.14);
+      border-radius: 14px;
+      background: linear-gradient(160deg, rgba(232,222,208,.06), rgba(232,222,208,.025));
+      transition: border-color .2s ease, transform .2s ease, background .2s ease;
+    }
+    .sys-mod::before {
+      content: ""; position: absolute; left: 18px; right: 18px; top: 0; height: 2px;
+      background: linear-gradient(90deg, var(--fluor), rgba(169,111,76,.15));
+      border-radius: 0 0 3px 3px; opacity: .55; transition: opacity .2s ease;
+    }
+    .sys-mod:hover {
+      border-color: rgba(201,161,90,.42);
+      transform: translateY(-2px);
+      background: linear-gradient(160deg, rgba(232,222,208,.085), rgba(232,222,208,.035));
+    }
+    .sys-mod:hover::before { opacity: 1; }
+    .sys-mod-n {
+      font-family: "SFMono-Regular", ui-monospace, Menlo, monospace;
+      font-size: 12px; letter-spacing: .08em; font-weight: 600;
+      color: var(--fluor); opacity: .85; margin-bottom: 10px;
+    }
+    .sys-mod-t {
+      display: block; color: var(--bone); font-size: 15.5px; font-weight: 700;
+      letter-spacing: .01em; margin-bottom: 6px;
+    }
+    .sys-mod-d { font-size: 13.5px; line-height: 1.55; color: rgba(242,234,223,.74); }
+    .sys-note {
+      margin-top: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px;
+      padding: 16px 20px; border-radius: 14px;
+      border: 1px solid rgba(201,161,90,.30);
+      border-left: 3px solid var(--fluor);
+      background: linear-gradient(150deg, rgba(201,161,90,.09), rgba(201,161,90,.03));
+    }
+    .sys-note-k {
+      font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+      color: var(--fluor); white-space: nowrap;
+    }
+    .sys-note-b { font-size: 14px; line-height: 1.55; color: rgba(242,234,223,.82); flex: 1 1 240px; }
+    @media (max-width: 720px) {
+      .system-grid.sys-modules { grid-template-columns: 1fr; }
+    }
 </style>
 </head>
 <body>
@@ -1631,17 +1683,7 @@
             <div class="kicker">07 &#183; Flexibilidad built-to-suit</div>
             <h2>El operador entra antes de que el dise&#241;o quede cerrado.</h2>
             <p class="lead">OPHAO SUBRA puede ajustarse a los requisitos operativos del operador seleccionado antes del proyecto t&#233;cnico definitivo: distribuci&#243;n, espacios comunes, FF&E, branding, tecnolog&#237;a, accesos, programa F&B e infraestructura adventure.</p>
-            <div class="system-grid">
-              <div class="system-item"><b>Room mix</b>Configuraci&#243;n de habitaciones y ba&#241;os.</div>
-              <div class="system-item"><b>Coworking</b>Puestos, cabinas, meeting points y conectividad.</div>
-              <div class="system-item"><b>F&B</b>Cocina social, desayunos, coffee point o self-service.</div>
-              <div class="system-item"><b>Access</b>Check-in, cerraduras, tecnolog&#237;a y operaci&#243;n ligera.</div>
-              <div class="system-item"><b>FF&E</b>Mobiliario, equipamiento y est&#225;ndar de marca.</div>
-              <div class="system-item"><b>Branding</b>Identidad final del operador o co-branding.</div>
-              <div class="system-item"><b>Retreats</b>Sala polivalente, workshops y formato grupo.</div>
-              <div class="system-item"><b>Adventure</b>Lockers, aparcamiento seguro y punto de briefing.</div>
-              <div class="system-item"><b>Adem&#225;s, el operador define</b>n&#250;mero final de llaves, mix de habitaciones, modelo de check-in y estructura contractual.</div>
-            </div>
+            <div class="system-grid sys-modules"><div class="sys-mod"><span class="sys-mod-n">01</span><b class="sys-mod-t">Room mix</b><span class="sys-mod-d">Configuraci&#243;n de habitaciones y ba&#241;os.</span></div><div class="sys-mod"><span class="sys-mod-n">02</span><b class="sys-mod-t">Coworking</b><span class="sys-mod-d">Puestos, cabinas, meeting points y conectividad.</span></div><div class="sys-mod"><span class="sys-mod-n">03</span><b class="sys-mod-t">F&B</b><span class="sys-mod-d">Cocina social, desayunos, coffee point o self-service.</span></div><div class="sys-mod"><span class="sys-mod-n">04</span><b class="sys-mod-t">Access</b><span class="sys-mod-d">Check-in, cerraduras, tecnolog&#237;a y operaci&#243;n ligera.</span></div><div class="sys-mod"><span class="sys-mod-n">05</span><b class="sys-mod-t">FF&E</b><span class="sys-mod-d">Mobiliario, equipamiento y est&#225;ndar de marca.</span></div><div class="sys-mod"><span class="sys-mod-n">06</span><b class="sys-mod-t">Branding</b><span class="sys-mod-d">Identidad final del operador o co-branding.</span></div><div class="sys-mod"><span class="sys-mod-n">07</span><b class="sys-mod-t">Retreats</b><span class="sys-mod-d">Sala polivalente, workshops y formato grupo.</span></div><div class="sys-mod"><span class="sys-mod-n">08</span><b class="sys-mod-t">Adventure</b><span class="sys-mod-d">Lockers, aparcamiento seguro y punto de briefing.</span></div></div><div class="sys-note"><span class="sys-note-k">Adem&#225;s, el operador define</span><span class="sys-note-b">n&#250;mero final de llaves, mix de habitaciones, modelo de check-in y estructura contractual.</span></div>
           </div>
           <div class="image-shell"><img src="assets/images/multipurpose-room.webp" alt="Sala polivalente OPHAO SUBRA"></div>
         </div>
@@ -2133,17 +2175,7 @@
             <div class="kicker">07 &#183; Built-to-suit flexibility</div>
             <h2>The operator enters before the design is locked.</h2>
             <p class="lead">OPHAO SUBRA can be adjusted to the selected operator's requirements before final technical design: layout, shared spaces, FF&E, branding, technology, access, F&B program and adventure infrastructure.</p>
-            <div class="system-grid">
-              <div class="system-item"><b>Room mix</b>Room and bathroom configuration.</div>
-              <div class="system-item"><b>Coworking</b>Seats, call booths, meeting points and connectivity.</div>
-              <div class="system-item"><b>F&B</b>Social kitchen, breakfast, coffee point or self-service.</div>
-              <div class="system-item"><b>Access</b>Check-in, locks, technology and light operation.</div>
-              <div class="system-item"><b>FF&E</b>Furniture, equipment and brand standard.</div>
-              <div class="system-item"><b>Branding</b>Operator identity or co-branding.</div>
-              <div class="system-item"><b>Retreats</b>Multipurpose room, workshops and group formats.</div>
-              <div class="system-item"><b>Adventure</b>Lockers, secure parking and briefing point.</div>
-              <div class="system-item"><b>The operator also defines</b>final number of keys, room mix, check-in model and commercial structure.</div>
-            </div>
+            <div class="system-grid sys-modules"><div class="sys-mod"><span class="sys-mod-n">01</span><b class="sys-mod-t">Room mix</b><span class="sys-mod-d">Room and bathroom configuration.</span></div><div class="sys-mod"><span class="sys-mod-n">02</span><b class="sys-mod-t">Coworking</b><span class="sys-mod-d">Seats, call booths, meeting points and connectivity.</span></div><div class="sys-mod"><span class="sys-mod-n">03</span><b class="sys-mod-t">F&B</b><span class="sys-mod-d">Social kitchen, breakfast, coffee point or self-service.</span></div><div class="sys-mod"><span class="sys-mod-n">04</span><b class="sys-mod-t">Access</b><span class="sys-mod-d">Check-in, locks, technology and light operation.</span></div><div class="sys-mod"><span class="sys-mod-n">05</span><b class="sys-mod-t">FF&E</b><span class="sys-mod-d">Furniture, equipment and brand standard.</span></div><div class="sys-mod"><span class="sys-mod-n">06</span><b class="sys-mod-t">Branding</b><span class="sys-mod-d">Operator identity or co-branding.</span></div><div class="sys-mod"><span class="sys-mod-n">07</span><b class="sys-mod-t">Retreats</b><span class="sys-mod-d">Multipurpose room, workshops and group formats.</span></div><div class="sys-mod"><span class="sys-mod-n">08</span><b class="sys-mod-t">Adventure</b><span class="sys-mod-d">Lockers, secure parking and briefing point.</span></div></div><div class="sys-note"><span class="sys-note-k">The operator also defines</span><span class="sys-note-b">final number of keys, room mix, check-in model and commercial structure.</span></div>
           </div>
           <div class="image-shell"><img src="assets/images/multipurpose-room.webp" alt="OPHAO SUBRA multipurpose room"></div>
         </div>
